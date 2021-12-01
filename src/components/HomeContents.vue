@@ -2,7 +2,7 @@
   <div class="home-contents">
     <div class="home-contents-side home-contents-section">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam non placeat nobis tempore quis ea minus dolor quibusdam dolores voluptatem expedita magnam obcaecati ex fugit, quia, commodi excepturi delectus asperiores.
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, tenetur enim provident culpa eius amet veniam vero inventore cum repellendus, voluptatem dicta esse, illum dolorum! Facere doloribus amet fuga reprehenderit.
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, tenetur enim provident.
     </div>
     <div class="home-contents-main home-contents-section">
       <div class="home-contents-main__concept">
@@ -49,9 +49,9 @@
     width: $width__home-contents-main;
     &__concept {
       width: 100%;
-      height: 230px;
+      height: 280px;
       background-color: $color__gray;
-    }
+    } 
     &__flyer {
       margin-top: 40px;
       &-banner {
@@ -68,10 +68,10 @@
       &-title {
         color: $color__yellow;
         font-style: italic;
-        margin-bottom: 1rem;
+        margin-bottom: 0.38rem;
       }
       &-lines {
-        margin-left: 2.8rem;
+        margin-left: 2rem;
         .circle {
           color: $color__red;
         }
@@ -88,7 +88,7 @@
     background-color: $color__default;
     &__img {
       height: 280px;
-      margin: 1.6rem;
+      margin: 1rem;
       background-color: $color__light-black;
     }
     &__link {

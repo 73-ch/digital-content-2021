@@ -4,7 +4,7 @@
       <img src="@/assets/images/logo.png" alt="digicon-logo" >
     </div>
     <div class="home-header__title">
-      メ創ディジコン展 2021
+      メ創ディジコン展<span class="home-header__title-year">2021</span>
     </div>
   </div>
 </template>
@@ -25,6 +25,9 @@
   &__title {
     font-size: $font-size__home-title;
     margin-left: 1.6rem;
+    &-year {
+      margin-left: 1rem;
+    }
   }
   &::after {
     content: "";

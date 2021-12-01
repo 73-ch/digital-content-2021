@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" :style="{'background-image': `url(${bgImage})`}">
     <home-header />
     <home-contents />
     <home-footer />
@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { computed } from 'vue'
 import HomeHeader from '@/components/HomeHeader.vue'
 import HomeContents from '@/components/HomeContents.vue'
 import HomeFooter from '@/components/HomeFooter.vue'
@@ -15,6 +16,11 @@ export default {
     HomeHeader,
     HomeContents,
     HomeFooter
+  },
+  setup() {
+    const bgImage = computed(() => require("@/assets/images/background.png"))
+
+    return { bgImage }
   }
 }
 </script>
@@ -23,7 +29,8 @@ export default {
 .home {
   width: 100vw;
   height: 100vh;
-  background-color: $color__blue;
-  padding: 2rem;
+  padding: 1.6rem;
+  background-repeat: repeat;
+  background-size: cover;
 }
 </style>
