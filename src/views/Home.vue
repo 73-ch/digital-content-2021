@@ -1,18 +1,36 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home" :style="{'background-image': `url(${bgImage})`}">
+    <home-header />
+    <home-contents />
+    <home-footer />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import { computed } from 'vue'
+import HomeHeader from '@/components/HomeHeader.vue'
+import HomeContents from '@/components/HomeContents.vue'
+import HomeFooter from '@/components/HomeFooter.vue'
 export default {
-  name: 'Home',
   components: {
-    HelloWorld
+    HomeHeader,
+    HomeContents,
+    HomeFooter
+  },
+  setup() {
+    const bgImage = computed(() => require("@/assets/images/background.png"))
+
+    return { bgImage }
   }
 }
 </script>
+
+<style scoped lang="scss">
+.home {
+  width: 100vw;
+  height: 100vh;
+  padding: 1.6rem;
+  background-repeat: repeat;
+  background-size: cover;
+}
+</style>
