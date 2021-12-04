@@ -6,13 +6,17 @@
     </div>
     <div class="home-contents-main home-contents-section">
       <div class="home-contents-main__work">
-
+        <work-list 
+          :workImages="filteredWorkImages"
+        />
       </div>
       <div class="home-contents-main__concept">
         <a :href="conceptBannerLink"><img src="@/assets/images/concept_banner.png"></a>
       </div>
       <div class="home-contents-main__work">
-
+        <work-list 
+          :workImages="filteredWorkImages"
+        />
       </div>
       <div class="home-contents-main__flyer">
         <div class="home-contents-main__flyer-banner">
@@ -42,13 +46,38 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import WorkList from '@/components/WorkList.vue'
 export default {
+  components: {
+    WorkList
+  },
   setup() {
+    const workImageIndex = ref(0)
     const conceptBannerLink = computed(() => require("@/assets/images/concept_banner.png"))
     const flyerBannerLink = computed(() => require("@/assets/images/flyer_banner.png"))
+    const workImages = ["logo copy.png", "logo copy 2.png", "logo copy 3.png", "logo copy 4.png", "Test1.jpg", "Test2.jpg", "Test3.jpg"]
+    const filteredWorkImages = computed(() => {
+      if (workImageIndex.value + 4 > workImages.length) {
+        // インデックスが画像の数を超えた時
+        const remainder = workImageIndex.value + 4 - workImages.length
+        return workImages.slice(workImageIndex.value).concat(workImages.slice(0, remainder))
+      } else {
+        return workImages.slice(workImageIndex.value, workImageIndex.value + 4)
+      }
+    })
 
-    return { conceptBannerLink, flyerBannerLink }
+    const initAutoImageSwitch = () => {
+      setInterval(() => {
+        workImageIndex.value = (workImageIndex.value + 4) % workImages.length
+      }, 5000)
+    }
+
+    onMounted(() => {
+      initAutoImageSwitch()
+    })
+
+    return { conceptBannerLink, flyerBannerLink, filteredWorkImages }
   }
 }
 </script>

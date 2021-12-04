@@ -1,6 +1,5 @@
 <template>
-  <!-- <div class="home" :style="{'background-image': `url(${bgImage})`}"> -->
-  <div class="home">
+  <div class="home" :style="{'background-image': `url(${bgImage})`}">
     <home-header />
     <home-contents />
     <home-footer />
