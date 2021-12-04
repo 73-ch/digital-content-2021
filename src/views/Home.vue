@@ -1,36 +1,29 @@
 <template>
-  <div id="home" :style="{'background-image': `url(${bgImage})`}">
-    <home-header />
-    <home-contents />
-    <home-footer />
-  </div>
+  <dummy id="dummy"/>
   <!-- 外に書く -->
-  <calibration />
+  <calibration/>
 </template>
 
 <script>
-import { computed } from 'vue'
-import HomeHeader from '@/components/HomeHeader.vue'
-import HomeContents from '@/components/HomeContents.vue'
-import HomeFooter from '@/components/HomeFooter.vue'
+import {computed} from 'vue'
+import Dummy from "@/views/Dummy";
 import Calibration from '@/components/Calibration.vue'
+
 export default {
   components: {
-    HomeHeader,
-    HomeContents,
-    HomeFooter,
+    Dummy,
     Calibration
   },
   setup() {
     const bgImage = computed(() => require("@/assets/images/background.png"))
 
-    return { bgImage }
+    return {bgImage}
   }
 }
 </script>
 
 <style scoped>
-#home {
+dummy {
   width: 100vw;
   height: 100vh;
   padding: 1.6rem;
@@ -40,6 +33,7 @@ export default {
 
   position: fixed;
 }
+
 calibration {
   visibility: visible; /* キャリブレーション用 */
   /* visibility: visible; 本番用 */

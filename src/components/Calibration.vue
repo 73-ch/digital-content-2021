@@ -16,10 +16,11 @@
           style="margin-left: 10px"
         />
       </div>
+      <p>{{computedTransform}}</p>
       <div id="perspective" class="param">
         <div>
           <label for="perspective">Perspective: </label>
-          <span id="val_perspective">600</span><span>px</span>
+          <span id="val_perspective">{{ perspective }}</span><span>px</span>
         </div>
         <input
           type="range"
@@ -27,13 +28,13 @@
           min="0"
           max="1500"
           step="1"
-          value="600"
+            v-model="perspective"
         />
       </div>
       <div id="translate_x" class="param">
         <div>
           <label for="translate_x">Translate X: </label>
-          <span id="val_translate_x">0</span><span>px</span>
+          <span id="val_translate_x">{{translateX}}</span><span>px</span>
         </div>
         <input
           type="range"
@@ -41,13 +42,13 @@
           min="-1000"
           max="1000"
           step="1"
-          value="0"
+            v-model="translateX"
         />
       </div>
       <div id="translate_y" class="param">
         <div>
           <label for="translate_y">Translate Y: </label>
-          <span id="val_translate_y">0</span><span>px</span>
+          <span id="val_translate_y">{{translateY}}</span><span>px</span>
         </div>
         <input
           type="range"
@@ -55,13 +56,13 @@
           min="-1000"
           max="1000"
           step="1"
-          value="0"
+            v-model="translateY"
         />
       </div>
       <div id="rotate_x" class="param">
         <div>
           <label for="rotate_x">Rotate X: </label>
-          <span id="val_rotate_x">0</span><span>deg</span>
+          <span id="val_rotate_x">{{rotateX}}</span><span>deg</span>
         </div>
         <input
           type="range"
@@ -69,13 +70,13 @@
           min="-180"
           max="180"
           step="1"
-          value="0"
+            v-model="rotateX"
         />
       </div>
       <div id="rotate_y" class="param">
         <div>
           <label for="rotate_y">Rotate Y: </label>
-          <span id="val_rotate_y">0</span><span>deg</span>
+          <span id="val_rotate_y">{{rotateY}}</span><span>deg</span>
         </div>
         <input
           type="range"
@@ -83,13 +84,13 @@
           min="-180"
           max="180"
           step="0.1"
-          value="0"
+            v-model="rotateY"
         />
       </div>
       <div id="rotate_z" class="param">
         <div>
           <label for="rotate_y">Rotate Z: </label>
-          <span id="val_rotate_z">0</span><span>deg</span>
+          <span id="val_rotate_z">{{rotateZ}}</span><span>deg</span>
         </div>
         <input
           type="range"
@@ -97,13 +98,13 @@
           min="-180"
           max="180"
           step="0.1"
-          value="0"
+            v-model="rotateZ"
         />
       </div>
       <div id="scale_x" class="param">
         <div>
           <label for="scale_x">Scale X: </label>
-          <span id="val_scale_x">1</span>
+          <span id="val_scale_x">{{scaleX}}</span>
         </div>
         <input
           type="range"
@@ -111,13 +112,13 @@
           min="0"
           max="1"
           step="0.001"
-          value="1.0"
+            v-model="scaleX"
         />
       </div>
       <div id="scale_y" class="param">
         <div>
           <label for="scale_y">Scale Y: </label>
-          <span id="val_scale_y">1</span>
+          <span id="val_scale_y">{{scaleY}}</span>
         </div>
         <input
           type="range"
@@ -125,13 +126,13 @@
           min="0"
           max="1"
           step="0.001"
-          value="1.0"
+            v-model="scaleY"
         />
       </div>
       <div id="scale_z" class="param">
         <div>
           <label for="scale_y">Scale Z: </label>
-          <span id="val_scale_z">1</span>
+          <span id="val_scale_z">{{scaleZ}}</span>
         </div>
         <input
           type="range"
@@ -139,7 +140,7 @@
           min="0"
           max="1"
           step="0.001"
-          value="1.0"
+            v-model="scaleZ"
         />
       </div>
       <button @click="exportJson">jsonに書き出す</button>
@@ -154,8 +155,35 @@ export default {
       targetId: "",
       targetElement: null,
       params: {},
+      perspective: 600,
+      translateX: 0,
+      translateY: 0,
+      rotateX: 0,
+      rotateY: 0,
+      rotateZ: 0,
+      scaleX: 1,
+      scaleY: 1,
+      scaleZ: 1,
       ws: new WebSocket("ws://localhost:42330")
     };
+  },
+  computed: {
+    computedTransform() {
+      let transformString = `translate3d(${this.translateX}px, ${this.translateY}px, 0px) `;
+      transformString += `rotate3d(1, 0, 0,${this.rotateX}deg) `
+      transformString += `rotate3d(0, 1, 0,${this.rotateY}deg) `;
+      transformString += `rotate3d(0, 0, 1,${this.rotateZ}deg) `
+      transformString += `scale3d(${this.scaleX},${this.scaleY},${this.scaleZ})`;
+      return transformString;
+    }
+  },
+  watch: {
+    computedTransform(value) {
+      this.targetElement.style.transform = value;
+    },
+    perspective(value) {
+      this.$el.style.perspective = value + "px";
+    }
   },
   methods: {
     calibration() {
@@ -170,108 +198,10 @@ export default {
       }
       targetElement.style.opacity = "0.5";
 
+      this.targetElement = targetElement;
+
       // ターゲットのvisibilityを扱うためのエレメント
       let view = document.getElementById("checkbox_view");
-
-      // 全体を覆うコンテナを取得
-      let container = document.getElementById("calibration");
-
-      // キャリブレーションのパラメータ
-      let params = {
-        perspective: {
-          eRange: document.getElementById("range_perspective"),
-          eVal: document.getElementById("val_perspective"),
-        },
-        translateX: {
-          eRange: document.getElementById("range_translate_x"),
-          eVal: document.getElementById("val_translate_x"),
-        },
-        translateY: {
-          eRange: document.getElementById("range_translate_y"),
-          eVal: document.getElementById("val_translate_y"),
-        },
-        rotateX: {
-          eRange: document.getElementById("range_rotate_x"),
-          eVal: document.getElementById("val_rotate_x"),
-        },
-        rotateY: {
-          eRange: document.getElementById("range_rotate_y"),
-          eVal: document.getElementById("val_rotate_y"),
-        },
-        rotateZ: {
-          eRange: document.getElementById("range_rotate_z"),
-          eVal: document.getElementById("val_rotate_z"),
-        },
-        scaleX: {
-          eRange: document.getElementById("range_scale_x"),
-          eVal: document.getElementById("val_scale_x"),
-        },
-        scaleY: {
-          eRange: document.getElementById("range_scale_y"),
-          eVal: document.getElementById("val_scale_y"),
-        },
-        scaleZ: {
-          eRange: document.getElementById("range_scale_z"),
-          eVal: document.getElementById("val_scale_z"),
-        },
-      };
-
-      // transformの値
-      let string =
-        "translate3d(" +
-        params.translateX.eRange.value +
-        "px," +
-        params.translateY.eRange.value +
-        "px, 0px) rotate3d(1, 0, 0," +
-        params.rotateX.eRange.value +
-        "deg) rotate3d(0, 1, 0," +
-        params.rotateY.eRange.value +
-        "deg) rotate3d(0, 0, 1, " +
-        params.rotateZ.eRange.value +
-        "deg) scale3d(" +
-        params.scaleX.eRange.value +
-        "," +
-        params.scaleY.eRange.value +
-        "," +
-        params.scaleZ.eRange.value +
-        ")";
-
-      // 値の更新
-      let updateValueAndView = function (elem, target) {
-        target.innerHTML = elem.value;
-
-        container.style.perspective = params.perspective.eRange.value + "px";
-
-        string =
-          "translate3d(" +
-          params.translateX.eRange.value +
-          "px," +
-          params.translateY.eRange.value +
-          "px, 0px) rotate3d(1, 0, 0," +
-          params.rotateX.eRange.value +
-          "deg) rotate3d(0, 1, 0," +
-          params.rotateY.eRange.value +
-          "deg) rotate3d(0, 0, 1, " +
-          params.rotateZ.eRange.value +
-          "deg) scale3d(" +
-          params.scaleX.eRange.value +
-          "," +
-          params.scaleY.eRange.value +
-          "," +
-          params.scaleZ.eRange.value +
-          ")";
-
-        targetElement.style.transform = string;
-      };
-
-      // イベント追加
-      for (let key in params) {
-        params[key].eRange.addEventListener("input", function () {
-          updateValueAndView(this, params[key].eVal);
-        });
-
-        updateValueAndView(params[key].eRange, params[key].eVal);
-      }
 
       view.addEventListener("change", function () {
         if (this.checked) {
@@ -281,36 +211,45 @@ export default {
         }
       });
     },
-    exportJson() {
-
+    async exportJson() {
       let targetElement = document.getElementById(this.targetId);
       targetElement.style.border = "none";
       targetElement.style.opacity = "1.0";
 
       document.getElementById("params").style.visibility = "hidden";
-      
-      this.ws.onopen = () => {
-        const data = {
-          perspective: JSON.stringify(this.params.perspective.eRange.value),
-          translateX: JSON.stringify(this.params.translateX.eRange.value),
-          translateY: JSON.stringify(this.params.translateY.eRange.value),
-          rotateX: JSON.stringify(this.params.rotateX.eRange.value),
-          rotateY: JSON.stringify(this.params.rotateY.eRange.value),
-          rotateZ: JSON.stringify(this.params.rotateZ.eRange.value),
-          scaleX: JSON.stringify(this.params.scaleX.eRange.value),
-          scaleY: JSON.stringify(this.params.scaleY.eRange.value),
-          scaleZ: JSON.stringify(this.params.scaleZ.eRange.value),
-        };
 
-        this.ws.send(JSON.stringify({
-          command: "save",
-          data,
-          path: "tests.json"
+      if (this.ws.readyState !== 1) {
+        console.error("websocket connection error. status: ", ["CONNECTING", "OPEN", "CLOSING", "CLOSED"][this.ws.readyState]);
+        this.ws = new WebSocket("ws://localhost:42330");
+        console.log("reconnecting...");
+        await (new Promise(resolve => {
+          this.ws.onopen = resolve;
+          console.log("reconnected");
         }));
+      }
 
-        alert("送信しました");
+      console.log("sending...");
+
+      const data = {
+        transformString: this.computedTransform,
+        perspective: this.perspective,
+        translateX: this.translateX,
+        translateY: this.translateY,
+        rotateX: this.rotateX,
+        rotateY: this.rotateY,
+        rotateZ: this.rotateZ,
+        scaleX: this.scaleX,
+        scaleY: this.scaleY,
+        scaleZ: this.scaleZ,
       };
 
+      this.ws.send(JSON.stringify({
+        command: "save",
+        data,
+        path: `${this.targetId}-${new Date().toISOString()}.json`
+      }));
+
+      alert("送信しました");
     }
   },
 };

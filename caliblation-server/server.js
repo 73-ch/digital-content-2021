@@ -39,7 +39,7 @@ wss.on('connection', function connection(ws) {
       }
 
       // export file
-      const json = JSON.stringify(data["data"]);
+      const json = JSON.stringify(data["data"], null, 4);
       const filePath = path.join("src/assets/calibration-data", data["path"])
       fs.writeFileSync(filePath, json);
 
