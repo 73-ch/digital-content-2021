@@ -5,12 +5,22 @@
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, tenetur enim provident.
     </div>
     <div class="home-contents-main home-contents-section">
+      <div class="home-contents-main__work">
+        <work-list 
+          :workImages="filteredWorkImages"
+        />
+      </div>
       <div class="home-contents-main__concept">
-
+        <a :href="conceptBannerLink"><img src="@/assets/images/concept_banner.png"></a>
+      </div>
+      <div class="home-contents-main__work">
+        <work-list 
+          :workImages="filteredWorkImages"
+        />
       </div>
       <div class="home-contents-main__flyer">
         <div class="home-contents-main__flyer-banner">
-          フライヤーダウンロードバナー
+          <a :href="flyerBannerLink"><img src="@/assets/images/flyer_banner.png"></a>
         </div>
         <div class="home-contents-main__flyer-message">
           是非ダウンロードしてお手元にご用意して頂いてからご覧ください。
@@ -35,6 +45,43 @@
   </div>
 </template>
 
+<script>
+import { ref, computed, onMounted } from 'vue'
+import WorkList from '@/components/WorkList.vue'
+export default {
+  components: {
+    WorkList
+  },
+  setup() {
+    const workImageIndex = ref(0)
+    const conceptBannerLink = computed(() => require("@/assets/images/concept_banner.png"))
+    const flyerBannerLink = computed(() => require("@/assets/images/flyer_banner.png"))
+    const workImages = ["logo copy.png", "logo copy 2.png", "logo copy 3.png", "logo copy 4.png", "Test1.jpg", "Test2.jpg", "Test3.jpg"]
+    const filteredWorkImages = computed(() => {
+      if (workImageIndex.value + 4 > workImages.length) {
+        // インデックスが画像の数を超えた時
+        const remainder = workImageIndex.value + 4 - workImages.length
+        return workImages.slice(workImageIndex.value).concat(workImages.slice(0, remainder))
+      } else {
+        return workImages.slice(workImageIndex.value, workImageIndex.value + 4)
+      }
+    })
+
+    const initAutoImageSwitch = () => {
+      setInterval(() => {
+        workImageIndex.value = (workImageIndex.value + 4) % workImages.length
+      }, 5000)
+    }
+
+    onMounted(() => {
+      initAutoImageSwitch()
+    })
+
+    return { conceptBannerLink, flyerBannerLink, filteredWorkImages }
+  }
+}
+</script>
+
 <style scoped lang="scss">
 .home-contents {
   font-size: $font-size__small;
@@ -49,22 +96,26 @@
     width: $width__home-contents-main;
     &__concept {
       width: 100%;
-      height: 280px;
-      background-color: $color__gray;
-    } 
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
     &__flyer {
-      margin-top: 40px;
+      margin-top: 0.3rem;
       &-banner {
         width: 280px;
-        height: 50px;
-        background-color: $color__gray;
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
       &-message {
-        margin-top: 1rem;
+        margin-top: 0.4rem;
       }
     }
     &__info {
-      margin-top: 1.6rem;
+      margin-top: 0.6rem;
       &-title {
         color: $color__yellow;
         font-style: italic;
