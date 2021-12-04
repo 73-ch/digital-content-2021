@@ -1,5 +1,6 @@
 <template>
-  <div class="home" :style="{'background-image': `url(${bgImage})`}">
+  <!-- <div class="home" :style="{'background-image': `url(${bgImage})`}"> -->
+  <div class="home">
     <home-header />
     <home-contents />
     <home-footer />
@@ -32,5 +33,6 @@ export default {
   padding: 1.6rem;
   background-repeat: repeat;
   background-size: cover;
+  background-color: #777;
 }
 </style>

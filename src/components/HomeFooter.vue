@@ -35,9 +35,12 @@
       flex-direction: column;
       align-items: center;
       button {
+        background-color: #fff;
+        border: none;
         width: 180px;
         height: 100%;
         margin: 0.1rem;
+        box-shadow: inset -5px 0px 2px rgba(0, 0, 0, 0.8), inset 0px -5px 2px rgba(18, 18, 18, 0.8);
       }
     }
     &-label {
