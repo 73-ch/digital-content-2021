@@ -5,12 +5,18 @@
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo, tenetur enim provident.
     </div>
     <div class="home-contents-main home-contents-section">
+      <div class="home-contents-main__work">
+
+      </div>
       <div class="home-contents-main__concept">
+        <a :href="conceptBannerLink"><img src="@/assets/images/concept_banner.png"></a>
+      </div>
+      <div class="home-contents-main__work">
 
       </div>
       <div class="home-contents-main__flyer">
         <div class="home-contents-main__flyer-banner">
-          <a :href="flyerBannerPath"><img src="@/assets/images/flyer_banner.png"></a>
+          <a :href="flyerBannerLink"><img src="@/assets/images/flyer_banner.png"></a>
         </div>
         <div class="home-contents-main__flyer-message">
           是非ダウンロードしてお手元にご用意して頂いてからご覧ください。
@@ -39,9 +45,10 @@
 import { computed } from 'vue'
 export default {
   setup() {
-    const flyerBannerPath = computed(() => require("@/assets/images/flyer_banner.png"))
+    const conceptBannerLink = computed(() => require("@/assets/images/concept_banner.png"))
+    const flyerBannerLink = computed(() => require("@/assets/images/flyer_banner.png"))
 
-    return { flyerBannerPath }
+    return { conceptBannerLink, flyerBannerLink }
   }
 }
 </script>
@@ -58,11 +65,16 @@ export default {
   }
   &-main {
     width: $width__home-contents-main;
+    &__work {
+
+    } 
     &__concept {
       width: 100%;
-      height: 280px;
-      background-color: $color__gray;
-    } 
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
     &__flyer {
       margin-top: 10px;
       &-banner {
