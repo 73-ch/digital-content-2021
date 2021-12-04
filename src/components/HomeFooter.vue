@@ -37,6 +37,7 @@
       button {
         background-color: #fff;
         border: none;
+        outline: none;
         width: 180px;
         height: 100%;
         margin: 0.1rem;
