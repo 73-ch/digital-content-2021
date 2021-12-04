@@ -94,9 +94,6 @@ export default {
   }
   &-main {
     width: $width__home-contents-main;
-    &__work {
-
-    } 
     &__concept {
       width: 100%;
       img {
@@ -105,23 +102,20 @@ export default {
       }
     }
     &__flyer {
-      margin-top: 10px;
+      margin-top: 0.3rem;
       &-banner {
         width: 280px;
         img {
           width: 100%;
           height: auto;
-          &:hover {
-
-          }
         }
       }
       &-message {
-        margin-top: 1rem;
+        margin-top: 0.4rem;
       }
     }
     &__info {
-      margin-top: 1.6rem;
+      margin-top: 0.6rem;
       &-title {
         color: $color__yellow;
         font-style: italic;
