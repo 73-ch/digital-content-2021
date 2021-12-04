@@ -10,7 +10,7 @@
       </div>
       <div class="home-contents-main__flyer">
         <div class="home-contents-main__flyer-banner">
-          フライヤーダウンロードバナー
+          <a :href="flyerBannerPath"><img src="@/assets/images/flyer_banner.png"></a>
         </div>
         <div class="home-contents-main__flyer-message">
           是非ダウンロードしてお手元にご用意して頂いてからご覧ください。
@@ -35,6 +35,17 @@
   </div>
 </template>
 
+<script>
+import { computed } from 'vue'
+export default {
+  setup() {
+    const flyerBannerPath = computed(() => require("@/assets/images/flyer_banner.png"))
+
+    return { flyerBannerPath }
+  }
+}
+</script>
+
 <style scoped lang="scss">
 .home-contents {
   font-size: $font-size__small;
@@ -53,11 +64,16 @@
       background-color: $color__gray;
     } 
     &__flyer {
-      margin-top: 40px;
+      margin-top: 10px;
       &-banner {
         width: 280px;
-        height: 50px;
-        background-color: $color__gray;
+        img {
+          width: 100%;
+          height: auto;
+          &:hover {
+
+          }
+        }
       }
       &-message {
         margin-top: 1rem;
