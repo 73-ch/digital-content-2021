@@ -2,25 +2,28 @@
   <div class="carousel">
     <Arrow direction="left" v-on:click="increment" />
     <div class="exhibition-container">
-      <Exhibition class="exhibition prev" :id="youtubeId(index-1)" />
-      <Exhibition class="exhibition" :id="youtubeId(index)" />
-      <Exhibition class="exhibition next" :id="youtubeId(index+1)" />
+      <Exhibition
+        v-for="(id, i) in subIdList"
+        :key="id"
+        :class="`exhibition ${i === 1 ? 'visible': ''}`"
+        :id="id"
+      />
     </div>
     <Arrow direction="right" v-on:click="decrement" />
   </div>
 </template>
 
 <script>
-// 3つ表示（うち2つz-indexとかで非表示）
-// ↓
-// クリックアクション
-// ↓
-// css書き換え
-// ↓
-// 一つ置き換え
-
 import Exhibition from "./Exhibition.vue";
 import Arrow from "./Arrow.vue";
+
+const idList = [
+  "HD_GCZgPChs",
+  "5qap5aO4i9A",
+  "KIXprc4-ifE",
+  "HpdO5Kq3o7Y",
+  "PeHvrD_jUBo",
+];
 
 export default {
   components: {
@@ -29,20 +32,28 @@ export default {
   },
   data () {
     return {
+      idList,
       index: 0,
+    }
+  },
+  computed: {
+    subIdList () {
+      return [
+        this.idList[(this.index-1+this.idList.length) % this.idList.length],
+        this.idList[this.index],
+        this.idList[(this.index+1) % this.idList.length],
+      ];
     }
   },
   methods: {
     increment () {
       this.index++;
+      this.index %= this.idList.length;
     },
     decrement () {
+      if (this.index === 0) this.index = this.idList.length;
       this.index--;
     },
-    youtubeId (index) {
-      if (index % 2 == 0) return "HD_GCZgPChs";
-      else return "5qap5aO4i9A";
-    }
   }
 };
 </script>
@@ -65,12 +76,9 @@ $height: 800px;
     position: absolute;
     width: 100%;
     height: 100%;
-
-    &.prev {
-      z-index: -1;
-    }
-    &.next {
-      z-index: -1;
+    visibility: hidden;
+    &.visible {
+      visibility: visible;
     }
   }
 }
