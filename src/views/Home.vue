@@ -1,5 +1,8 @@
 <template>
-  <dummy id="dummy"/>
+  <!-- dummyとcalibrationを覆う要素を必ず追加する -->
+  <div id="home">
+    <dummy id="dummy"/>
+  </div>
   <!-- 外に書く -->
   <calibration/>
 </template>
@@ -23,6 +26,9 @@ export default {
 </script>
 
 <style scoped>
+#home {
+  position: fixed;
+}
 dummy {
   width: 100vw;
   height: 100vh;
@@ -30,8 +36,6 @@ dummy {
   background-repeat: repeat;
   background-size: cover;
   background-color: #777;
-
-  position: fixed;
 }
 
 calibration {
