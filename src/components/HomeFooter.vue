@@ -35,22 +35,14 @@
       flex-direction: column;
       align-items: center;
       button {
-        background-color: #fff;
-        border: none;
-        outline: none;
         width: 180px;
         height: 100%;
         margin: 0.1rem;
         font-family: $font-family__default;
         font-weight: bold;
-        box-shadow: inset -5px 0px 2px rgba(0, 0, 0, 0.8), inset 0px -5px 2px rgba(64, 64, 64, 0.8);
-        cursor: pointer;
-        &:hover {
-          background-color: #eee;
-        }
-        &:active {
-          background-color: #ccc;
-        }
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
       }
     }
     &-label {
