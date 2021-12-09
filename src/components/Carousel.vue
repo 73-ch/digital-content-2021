@@ -6,6 +6,7 @@
         v-for="(id, i) in subIdList"
         :key="id"
         :class="`exhibition ${i === 1 ? 'visible': ''}`"
+        :style="transitionCssCreator(i === 1)"
         :id="id"
       />
     </div>
@@ -22,8 +23,9 @@ const idList = [
   "5qap5aO4i9A",
   "KIXprc4-ifE",
   "HpdO5Kq3o7Y",
-  "PeHvrD_jUBo",
 ];
+
+const transitionTime = 0.6;
 
 export default {
   components: {
@@ -34,6 +36,7 @@ export default {
     return {
       idList,
       index: 0,
+      switchable: true,
     }
   },
   computed: {
@@ -47,19 +50,35 @@ export default {
   },
   methods: {
     increment () {
+      if (!this.switchable) return;
       this.index++;
       this.index %= this.idList.length;
+      this.sleepSwitcher();
     },
     decrement () {
+      if (!this.switchable) return;
       if (this.index === 0) this.index = this.idList.length;
       this.index--;
+      this.sleepSwitcher();
     },
+    sleepSwitcher () {
+      this.switchable = false;
+      const enableSwitcher = () => this.switchable = true;
+      setTimeout(enableSwitcher, transitionTime * 2 * 1000);
+    },
+    transitionCssCreator (isVisibleClass) {
+      if (isVisibleClass)
+        return `transition: all ${transitionTime}s ${transitionTime}s`;
+      else
+        return `transition: all ${transitionTime}s`;
+    }
   }
 };
 </script>
 
 <style scoped lang="scss">
 $height: 800px;
+$transitionTime: 0.5s;
 
 .carousel {
   display: flex;
@@ -76,9 +95,9 @@ $height: 800px;
     position: absolute;
     width: 100%;
     height: 100%;
-    visibility: hidden;
+    opacity: 0;
     &.visible {
-      visibility: visible;
+      opacity: 1;
     }
   }
 }
