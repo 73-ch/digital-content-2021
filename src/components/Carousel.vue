@@ -78,7 +78,6 @@ export default {
 
 <style scoped lang="scss">
 $height: 800px;
-$transitionTime: 0.5s;
 
 .carousel {
   display: flex;
