@@ -2,22 +2,31 @@
   <div class="home-footer">
     <div class="home-footer__btns">
       <div class="home-footer__btns-col">
-        <button>Member</button>
+        <button class="home-footer__btns-label">Member</button>
       </div>
       <div class="home-footer__btns-col">
         <button class="home-footer__btns-label">Producer</button>
-        <button>Namikawa Kosaku</button>
+        <button class="home-footer__btns-label">Namikawa Kosaku</button>
       </div>
       <div class="home-footer__btns-col">
         <button class="home-footer__btns-label">Teacher</button>
-        <button><a href="https://yoichiochiai.com/">Ochiai Yoichi</a></button>
+        <button class="link" @click="openPopupWindow('https://yoichiochiai.com/')">Ochiai Yoichi</button>
       </div>
       <div class="home-footer__btns-col">
-        <button><a href="">Many Other members involved in this project</a></button>
+        <button class="link" @click="openPopupWindow('http://localhost:8080/credit')">Many Other members involved in this project</button>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import { openPopupWindow } from '@/helpers/PopupWindow.js'
+export default {
+  setup() {
+    return { openPopupWindow }
+  }
+}
+</script>
 
 <style scoped lang="scss">
 .home-footer {
@@ -48,6 +57,11 @@
     &-label {
       pointer-events: none;
     }
+  }
+  .link {
+    color: #00f;
+    text-decoration: underline;
+    cursor: pointer;
   }
 }
 </style>
