@@ -24,6 +24,9 @@
   }
   &__title {
     font-size: $font-size__home-title;
+    display: inline-block;
+    white-space: nowrap;
+
     &-sub {
       margin-left: 1rem;
     }

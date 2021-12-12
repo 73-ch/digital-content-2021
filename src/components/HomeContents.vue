@@ -60,7 +60,7 @@ export default {
     const flyerBannerLink = computed(() => require("@/assets/images/flyer_banner.png"))
     const filteredWorkImages = computed(() => getPartOfArray(workImages.value, workImageIndex.value, thumbnailNum))
     const revFilteredWorkImages = computed(() => getPartOfArray(revWorkImages.value, workImageIndex.value, thumbnailNum))
-    
+
     // arrayの一部を返す
     const getPartOfArray = (array, startIdx, count) => {
       if (startIdx + count > array.length) {
@@ -99,10 +99,11 @@ export default {
 <style scoped lang="scss">
 .home-contents {
   font-size: $font-size__small;
-  height: $height__home-content;
+  width: $width__home-contents;
+  //height: $height__home-content;
   padding: 2rem 0;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   &-side {
     width: $width__home-contents-side;
     line-height: 1.6rem;
@@ -140,7 +141,7 @@ export default {
     width: $width__home-contents-works;
     &__img {
       height: 280px;
-      margin: 1rem;
+      //margin: 1rem;
       background-color: $color__light-black;
     }
     &__flyer {
@@ -159,7 +160,7 @@ export default {
   }
   &-section {
     & + & {
-      margin-left: 2rem;
+      //margin-left: 2rem;
     }
   }
 }
