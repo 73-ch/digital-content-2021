@@ -1,61 +1,70 @@
 <template>
-  <div class="home-footer">
+  <footer class="home-footer">
     <div class="home-footer__btns">
       <div class="home-footer__btns-col">
-        <button>Member</button>
+        <button class="home-footer__btns-label">Member</button>
       </div>
       <div class="home-footer__btns-col">
         <button class="home-footer__btns-label">Producer</button>
-        <button>Namikawa Kosaku</button>
+        <button class="home-footer__btns-label">Namikawa Kosaku</button>
       </div>
       <div class="home-footer__btns-col">
         <button class="home-footer__btns-label">Teacher</button>
-        <button><a href="https://yoichiochiai.com/">Ochiai Yoichi</a></button>
+        <button class="link" @click="openPopupWindow('https://yoichiochiai.com/')">Ochiai Yoichi</button>
       </div>
       <div class="home-footer__btns-col">
-        <button><a href="">Many Other members involved in this project</a></button>
+        <button class="link" @click="openPopupWindow('./credit')">Many Other members involved in this project</button>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
+
+<script>
+import { openPopupWindow } from '@/helpers/PopupWindow.js'
+export default {
+  setup() {
+    return { openPopupWindow }
+  }
+}
+</script>
 
 <style scoped lang="scss">
 .home-footer {
   height: $height__home-footer;
-  padding: 0 2rem;
+  width: $width__home-contents;
+  //padding: 0 2rem;
   &__btns {
-    margin-left: $width__home-contents-side;
+    //margin-left: $width__home-contents-side;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    width: 100%;
     align-items: center;
     height: 100%;
     &-col {
       height: 100%;
+      width: 24.5%;
       display: flex;
       flex-direction: column;
       align-items: center;
       button {
-        background-color: #fff;
-        border: none;
-        outline: none;
-        width: 180px;
+        width: 100%;
         height: 100%;
-        margin: 0.1rem;
+        margin: 2.5px;
         font-family: $font-family__default;
         font-weight: bold;
-        box-shadow: inset -5px 0px 2px rgba(0, 0, 0, 0.8), inset 0px -5px 2px rgba(64, 64, 64, 0.8);
-        cursor: pointer;
-        &:hover {
-          background-color: #eee;
-        }
-        &:active {
-          background-color: #ccc;
-        }
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
       }
     }
     &-label {
       pointer-events: none;
     }
+  }
+  .link {
+    color: #00f;
+    text-decoration: underline;
+    cursor: pointer;
   }
 }
 </style>

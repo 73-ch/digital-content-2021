@@ -18,46 +18,54 @@
 import Exhibition from "./Exhibition.vue";
 import Arrow from "./Arrow.vue";
 
-const idList = [
-  "HD_GCZgPChs",
-  "KIXprc4-ifE",
-  "HpdO5Kq3o7Y",
-];
-
 const transitionTime = 0.6;
 
 export default {
   components: {
-      Exhibition,
-      Arrow,
+    Exhibition,
+    Arrow,
+  },
+  props: {
+    config: Array,
+    propIndex: Number,
   },
   data () {
     return {
-      idList,
-      index: 0,
       switchable: true,
     }
   },
   computed: {
+    index: {
+      get() {
+        return this.propIndex;
+      },
+      set(val){
+        this.$emit('update:propIndex', val);
+      },
+    },
     subIdList () {
       return [
-        this.idList[(this.index-1+this.idList.length) % this.idList.length],
-        this.idList[this.index],
-        this.idList[(this.index+1) % this.idList.length],
+        this.config[(this.index-1+this.config.length) % this.config.length].youtubeId,
+        this.config[this.index].youtubeId,
+        this.config[(this.index+1) % this.config.length].youtubeId,
       ];
     }
   },
   methods: {
     increment () {
       if (!this.switchable) return;
-      this.index++;
-      this.index %= this.idList.length;
+      let index = this.index;
+      index++;
+      index %= this.config.length;
+      this.index = index;
       this.sleepSwitcher();
     },
     decrement () {
       if (!this.switchable) return;
-      if (this.index === 0) this.index = this.idList.length;
-      this.index--;
+      let index = this.index;
+      if (this.index === 0) index = this.config.length;
+      index--;
+      this.index = index;
       this.sleepSwitcher();
     },
     sleepSwitcher () {
@@ -71,7 +79,7 @@ export default {
       else
         return `transition: all ${transitionTime}s`;
     }
-  }
+  },
 };
 </script>
 
