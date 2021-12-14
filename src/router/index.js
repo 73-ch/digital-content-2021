@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import broadCast from '../views/broadCast.vue'
+import broadCast from '@/views/broadCast.vue'
+import Dummy from '@/views/Dummy.vue'
+import Home from "@/views/Home";
 
 const routes = [
   {
@@ -12,6 +13,11 @@ const routes = [
     path: '/broadCast',
     name: 'broadCast',
     component: broadCast
+  },
+  {
+    path: '/dummy',
+    name: 'Dummy',
+    component: Dummy
   }
 ]
 
