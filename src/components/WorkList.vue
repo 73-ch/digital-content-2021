@@ -33,8 +33,8 @@ export default {
   justify-content: space-between;
   align-items: center;
   &__item {
-    width: 125px;
-    height: 125px;
+    width: 128px;
+    height: 128px;
     img {
       width: 100%;
       height: auto;

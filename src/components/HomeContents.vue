@@ -13,7 +13,7 @@
       <div class="home-contents-main__concept">
         <img @click="openPopupWindow('http://localhost:8080/concept')" src="@/assets/images/concept_banner.png">
       </div>
-      <div class="home-contents-main__work">
+      <div class="home-contents-main__work-lower">
         <work-list
           :workImages="revFilteredWorkImages"
         />
@@ -25,13 +25,16 @@
         <div class="home-contents-main__info-lines">
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Host : Media Arts, Science and Technology</div>
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Date : 2021.12.16 - January 1 (Fri)</div>
+          <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Time : 10:00 - 20:00</div>
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Price : Free</div>
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Venue : Online</div>
         </div>
       </div>
     </div>
     <div class="home-contents-works home-contents-section">
-      <div class="home-contents-works__img"></div>
+      <div class="home-contents-works__img">
+        <a href="#"><img src="@/assets/images/navigation.png"></a>
+      </div>
       <div class="home-contents-works__flyer">
         <div class="home-contents-works__flyer-banner">
           <a :href="flyerBannerLink"><img src="@/assets/images/flyer_banner.png"></a>
@@ -113,6 +116,8 @@ export default {
     &__concept {
       cursor: pointer;
       width: 100%;
+      z-index: 10;
+      transform: translateY(-17px);
       img {
         width: 100%;
         height: auto;
@@ -135,14 +140,17 @@ export default {
         }
       }
     }
+    &__work-lower {
+      transform: translateY(-17px);
+    }
   }
   &-works {
     height: fit-content;
     width: $width__home-contents-works;
     &__img {
-      height: 280px;
-      //margin: 1rem;
-      background-color: $color__light-black;
+      img {
+        width: 100%;
+      }
     }
     &__flyer {
       margin-top: 0.3rem;
