@@ -30,8 +30,8 @@ export default {
 
 <style scoped lang="scss">
 .home {
-  width: 100vw;
-  min-height: 100vh;
+  width: 1920px;
+  height: 1009px;
   padding: 1.6rem;
   background-repeat: repeat;
   background-size: cover;

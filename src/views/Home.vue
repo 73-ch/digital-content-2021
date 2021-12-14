@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <iframe id="broadcast" src="https://www.youtube.com/embed/I8GF-xL2L1g?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0"></iframe>
+    <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0"></iframe>
     <dummy id="dummy"/>
   </div>
   <calibration v-if="debugMode"/>
@@ -60,8 +60,8 @@ iframe {
   height: 100vh;
 }
 dummy {
-  width: 100vw;
-  height: 100vh;
+  width: 1920px;
+  height: 1009px;
   padding: 1.6rem;
   background-repeat: repeat;
   background-size: cover;
