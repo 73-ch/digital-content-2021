@@ -255,7 +255,7 @@ export default {
         JSON.stringify({
           command: "save",
           data,
-          path: `${this.targetId}test.json`,
+          path: `${this.targetId}.json`,
         })
       )
 

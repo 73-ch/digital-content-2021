@@ -9,7 +9,7 @@
 <script>
 import {computed} from 'vue'
 import Dummy from "@/views/Dummy";
-import transformJSON from '@/assets/calibration-data/dummytest.json'
+import transformJSON from '@/assets/calibration-data/dummy.json'
 import Calibration from '@/components/Calibration.vue'
 
 export default {
@@ -40,6 +40,7 @@ export default {
         this.parentElement = targetElement.parentElement;
         this.parentElement.style.transformStyle = "preserve-3d";
         this.parentElement.style.perspective = this.transform.perspective + "px";
+        this.parentElement.style.transformStyle = "flat";
 
         this.targetElement.style.transform = this.transform.transformString;
 
@@ -56,12 +57,12 @@ export default {
 iframe {
   position: fixed;
   z-index: -5;
-  width: 100vw;
-  height: 100vh;
-}
-dummy {
   width: 1920px;
   height: 1009px;
+}
+dummy {
+  width: 100vw;
+  height: 100vh;
   padding: 1.6rem;
   background-repeat: repeat;
   background-size: cover;
