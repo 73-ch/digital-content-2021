@@ -88,7 +88,7 @@
           id="range_rotate_x"
           min="-180"
           max="180"
-          step="1"
+          step="0.1"
           v-model="rotateX"
         />
       </div>
@@ -131,7 +131,7 @@
           type="range"
           id="range_scale_x"
           min="0"
-          max="1"
+          max="2"
           step="0.001"
           v-model="scaleX"
         />
@@ -145,7 +145,7 @@
           type="range"
           id="range_scale_y"
           min="0"
-          max="1"
+          max="2"
           step="0.001"
           v-model="scaleY"
         />
@@ -204,7 +204,7 @@ export default {
         alert("IDが存在しません");
         return;
       }
-      targetElement.style.opacity = "0.5";
+      targetElement.style.opacity = "0.8";
 
       this.targetElement = targetElement;
       this.parentElement = targetElement.parentElement;
@@ -223,13 +223,6 @@ export default {
       });
     },
     async exportJson() {
-      let targetElement = document.getElementById(this.targetId);
-      targetElement.style.border = "none";
-      targetElement.style.opacity = "1.0";
-
-      document.getElementById("params").style.visibility = "hidden";
-      this.parentElement.style.transformStyle = "flat";
-
       if (this.ws.readyState !== 1) {
         console.error(
           "websocket connection error. status: ",
@@ -262,9 +255,9 @@ export default {
         JSON.stringify({
           command: "save",
           data,
-          path: `${this.targetId}-${new Date().toISOString()}.json`,
+          path: `${this.targetId}test.json`,
         })
-      );
+      )
 
       alert("送信しました");
     },
@@ -291,12 +284,12 @@ export default {
 #params {
   // ここは適当
   padding: 2% 2%;
-  width: 300px;
+  width: 800px;
   position: fixed;
   top: 80px;
   right: 0;
 
-  background-color: rgba(20, 20, 20, 0.95);
+  background-color: rgba(20, 20, 20, 0.1);
   border-radius: 1%;
   color: white;
 
