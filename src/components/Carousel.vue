@@ -20,7 +20,6 @@ import Arrow from "./Arrow.vue";
 
 const idList = [
   "HD_GCZgPChs",
-  "5qap5aO4i9A",
   "KIXprc4-ifE",
   "HpdO5Kq3o7Y",
 ];
