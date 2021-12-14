@@ -20,8 +20,8 @@ export default {
     }
   },
   setup(props) {
-    const workImageSrcs = computed(() => props.workImages.map(imageName => require(`@/assets/images/works/${imageName}`)))
-
+    const workImageSrcs = computed(() => props.workImages.map(imageName => require(`@/assets/images/thumbnails/${imageName}`)))
+  
     return { workImageSrcs }
   }
 }
@@ -33,8 +33,8 @@ export default {
   justify-content: space-between;
   align-items: center;
   &__item {
-    width: 100px;
-    height: 100px;
+    width: 125px;
+    height: 125px;
     img {
       width: 100%;
       height: auto;
