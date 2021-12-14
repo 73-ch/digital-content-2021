@@ -43,7 +43,7 @@ export default {
 
         this.targetElement.style.transform = this.transform.transformString;
 
-        targetElement.style.opacity = 0.0;
+        targetElement.style.opacity = 1.0;
     }
   }
 }

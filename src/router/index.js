@@ -3,7 +3,6 @@ import Home from "@/views/Home";
 import Dummy from '@/views/Dummy.vue'
 import Concept from '@/views/Concept.vue'
 import Credit from '@/views/Credit.vue'
-import CalibrationTest from '@/views/CalibrationTest.vue'
 
 const routes = [
   {
@@ -26,11 +25,6 @@ const routes = [
     name: 'Credit',
     component: Credit
   },
-  {
-    path: '/calibration-test',
-    name: 'CalibrationTest',
-    component: CalibrationTest
-  }
 ]
 
 const router = createRouter({
