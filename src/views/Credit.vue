@@ -92,21 +92,13 @@ export default {
   padding: 1.6rem;
   background-repeat: repeat;
   background-size: cover;
-  background-color: #777;
-  position: relative;
   .wrapper {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 800px;
   }
   &-title {
-    font-size: 48px;
-    text-align: center;
+    font-size: $font-size__title;
   }
   &-list {
-    margin-top: 2.8rem;
     &__item {
       font-size: 16px;
       line-height: 1.6rem;
@@ -115,14 +107,11 @@ export default {
       align-items: center;
       margin-top: 0.618rem;
       &-label {
-        // width: 50%;
-        width: 47%;
-        text-align: right;
+        width: 160px;
       }
       &-name {
-        // width: 50%;
         text-align: left;
-        margin-left: 1.6rem;
+        margin-left: 0.6rem;
       }
     }
   }

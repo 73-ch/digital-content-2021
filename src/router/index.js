@@ -3,7 +3,6 @@ import Home from "@/views/Home";
 import Dummy from '@/views/Dummy.vue'
 import Concept from '@/views/Concept.vue'
 import Credit from '@/views/Credit.vue'
-import CalibrationTest from '@/views/CalibrationTest.vue'
 
 const routes = [
   {
@@ -27,9 +26,9 @@ const routes = [
     component: Credit
   },
   {
-    path: '/calibration-test',
-    name: 'CalibrationTest',
-    component: CalibrationTest
+    // それ以外はホーム画面に遷移
+    path: '/:notFound(.*)',
+    redirect: '/'
   }
 ]
 
