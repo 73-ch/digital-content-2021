@@ -20,14 +20,15 @@
       </div>
       <div class="home-contents-main__info">
         <div class="home-contents-main__info-title">
-          Who, When, How mach and Where?
+          Who, When, Where and How much?
         </div>
         <div class="home-contents-main__info-lines">
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Host : Media Arts, Science and Technology</div>
-          <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Date : 2021.12.16 - January 1 (Fri)</div>
-          <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Time : 10:00 - 20:00</div>
+          <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Date : Dec. 16(Thu) - Dec. 20(MOn), 2021</div>
+          <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Time : 10:00 ~ 20:00</div>
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Price : Free</div>
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Venue : Online</div>
+          <div class="home-contents-main__info-lines__line">※17:00 ~ 21:00 on Dec. 16 / 9:00 ~ 17:00 on Dec. 20</div>
         </div>
       </div>
     </div>
@@ -37,7 +38,7 @@
       </div>
       <div class="home-contents-works__flyer">
         <div class="home-contents-works__flyer-banner">
-          <a :href="flyerBannerLink"><img src="@/assets/images/flyer_banner.png"></a>
+          <a :href="flyerBannerLink" download="banner.png"><img src="@/assets/images/flyer_banner.png"></a>
         </div>
         <div class="home-contents-works__flyer-message">
           是非ダウンロードしてお手元にご用意して頂いてからご覧ください。
@@ -60,7 +61,7 @@ export default {
     const workImageIndex = ref(0)
     const workImages = ref([])
     const revWorkImages = ref([])
-    const flyerBannerLink = computed(() => require("@/assets/images/flyer_banner.png"))
+    const flyerBannerLink = computed(() => require("@/assets/images/flyer.png"))
     const filteredWorkImages = computed(() => getPartOfArray(workImages.value, workImageIndex.value, thumbnailNum))
     const revFilteredWorkImages = computed(() => getPartOfArray(revWorkImages.value, workImageIndex.value, thumbnailNum))
 
@@ -131,12 +132,15 @@ export default {
         margin-bottom: 0.38rem;
       }
       &-lines {
-        margin-left: 2rem;
+        transform: translateX(-10px);
         .circle {
           color: $color__red;
         }
         &__line {
           line-height: 1.1rem;
+          &:last-child {
+            margin-top: 0.6rem;
+          }
         }
       }
     }
@@ -155,7 +159,6 @@ export default {
     &__flyer {
       margin-top: 0.3rem;
       &-banner {
-        width: 280px;
         img {
           width: 100%;
           height: auto;
