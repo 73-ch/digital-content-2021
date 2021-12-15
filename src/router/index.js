@@ -31,6 +31,11 @@ const routes = [
     name: 'Credit',
     component: Credit
   },
+  {
+    // それ以外はホーム画面に遷移
+    path: '/:notFound(.*)',
+    redirect: '/'
+  }
 ]
 
 const router = createRouter({

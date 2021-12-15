@@ -30,8 +30,11 @@ export default {
 
 <style scoped lang="scss">
 .home {
-  width: 100vw;
-  height: 100vh;
+  font-family: dnp-shuei-nmincho-std, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  width: 1920px;
+  height: 1009px;
   padding: 1.6rem;
   background-repeat: repeat;
   background-size: cover;

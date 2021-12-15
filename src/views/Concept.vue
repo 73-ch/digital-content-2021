@@ -29,25 +29,20 @@ export default {
 <style scoped lang="scss">
 .concept {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   padding: 1.6rem;
   background-repeat: repeat;
   background-size: cover;
   background-color: #777;
-  position: relative;
   &-message {
-    width: 740px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 800px;
     &__title {
-      font-size: 48px;
-      text-align: center;
+      font-size: $font-size__title;
+      padding-bottom: 2px;
     }
     &__sentence {
-      margin-top: 2.8rem;
-      font-size: 18px;
+      margin-top: 1.6rem;
+      font-size: 16px;
       color: $color__default;
       line-height: 2.45rem;
     }

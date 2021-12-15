@@ -42,8 +42,8 @@
         <input
           type="range"
           id="range_translate_x"
-          min="-1000"
-          max="1000"
+          min="-1500"
+          max="1500"
           step="1"
           v-model="translateX"
         />
@@ -256,7 +256,7 @@ export default {
         JSON.stringify({
           command: "save",
           data,
-          path: `${this.targetId}test.json`,
+          path: `${this.targetId}.json`,
         })
       )
 

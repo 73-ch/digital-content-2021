@@ -23,7 +23,7 @@
     }
   }
   &__title {
-    font-size: $font-size__home-title;
+    font-size: $font-size__title;
     display: inline-block;
     white-space: nowrap;
 

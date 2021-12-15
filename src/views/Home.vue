@@ -1,15 +1,17 @@
 <template>
   <div id="home">
-    <iframe id="broadcast" src="https://www.youtube.com/embed/I8GF-xL2L1g?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0"></iframe>
-    <dummy id="dummy"/>
+    <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0"></iframe>
+    <div class="virtual-screen">
+      <dummy id="dummy"/>
+    </div>
   </div>
   <calibration v-if="debugMode"/>
 </template>
 
 <script>
 import {computed} from 'vue'
-import Dummy from "@/views/Dummy";
-import transformJSON from '@/assets/calibration-data/dummytest.json'
+import Dummy from "@/views/Dummy"
+import transformJSON from '@/assets/calibration-data/dummy.json'
 import Calibration from '@/components/Calibration.vue'
 
 export default {
@@ -30,21 +32,29 @@ export default {
       debugMode: false
     }
   },
-  mounted() {
-    this.debugMode = process.env.NODE_ENV === "development";
-
-    if (!this.debugMode) {
+  methods: {
+    setVirtualScreen() {
+      console.log("called setVirtualScreen")
+      if (!this.debugMode) {
         let targetElement = document.getElementById("dummy");
 
         this.targetElement = targetElement;
         this.parentElement = targetElement.parentElement;
         this.parentElement.style.transformStyle = "preserve-3d";
         this.parentElement.style.perspective = this.transform.perspective + "px";
+        this.parentElement.style.transformStyle = "flat";
 
         this.targetElement.style.transform = this.transform.transformString;
 
-        targetElement.style.opacity = 0.7;
+        targetElement.style.opacity = 0.0;
+      }
     }
+  },
+  mounted() {
+    this.debugMode = process.env.NODE_ENV === "production"
+
+    this.setVirtualScreen()
+    window.addEventListener('resize', this.setVirtualScreen)
   }
 }
 </script>
@@ -56,16 +66,25 @@ export default {
 iframe {
   position: fixed;
   z-index: -5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 177.777vh;
+  max-width: 100vw;
+  min-height: 56.25vw;
+  max-height: 100vh;
   width: 100vw;
   height: 100vh;
 }
-dummy {
+.virtual-screen {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 177.777vh;
+  max-width: 100vw;
+  min-height: 56.25vw;
+  max-height: 100vh;
   width: 100vw;
   height: 100vh;
-  padding: 1.6rem;
-  background-repeat: repeat;
-  background-size: cover;
-  background-color: #777;  
 }
-
 </style>
