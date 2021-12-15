@@ -1,0 +1,12 @@
+{
+    "transformString": "translate3d(659px, -406px, -323px) rotate3d(1, 0, 0,0deg) rotate3d(0, 1, 0,64.3deg) rotate3d(0, 0, 1,0deg) scale3d(1, 1, 1 )",
+    "perspective": 600,
+    "translateX": "659",
+    "translateY": "-406",
+    "translateZ": "-323",
+    "rotateX": 0,
+    "rotateY": "64.3",
+    "rotateZ": 0,
+    "scaleX": 1,
+    "scaleY": 1
+}
