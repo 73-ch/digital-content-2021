@@ -1,14 +1,16 @@
 <template>
   <div id="home">
     <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0"></iframe>
-    <dummy id="dummy"/>
+    <div class="virtual-screen">
+      <dummy id="dummy"/>
+    </div>
   </div>
   <calibration v-if="debugMode"/>
 </template>
 
 <script>
 import {computed} from 'vue'
-import Dummy from "@/views/Dummy";
+import Dummy from "@/views/Dummy"
 import transformJSON from '@/assets/calibration-data/dummy.json'
 import Calibration from '@/components/Calibration.vue'
 
@@ -30,10 +32,10 @@ export default {
       debugMode: false
     }
   },
-  mounted() {
-    this.debugMode = process.env.NODE_ENV === "development";
-
-    if (!this.debugMode) {
+  methods: {
+    setVirtualScreen() {
+      console.log("called setVirtualScreen")
+      if (!this.debugMode) {
         let targetElement = document.getElementById("dummy");
 
         this.targetElement = targetElement;
@@ -45,7 +47,14 @@ export default {
         this.targetElement.style.transform = this.transform.transformString;
 
         targetElement.style.opacity = 0.0;
+      }
     }
+  },
+  mounted() {
+    this.debugMode = process.env.NODE_ENV === "production"
+
+    this.setVirtualScreen()
+    window.addEventListener('resize', this.setVirtualScreen)
   }
 }
 </script>
@@ -57,16 +66,25 @@ export default {
 iframe {
   position: fixed;
   z-index: -5;
-  width: 1920px;
-  height: 1009px;
-}
-dummy {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 177.777vh;
+  max-width: 100vw;
+  min-height: 56.25vw;
+  max-height: 100vh;
   width: 100vw;
   height: 100vh;
-  padding: 1.6rem;
-  background-repeat: repeat;
-  background-size: cover;
-  background-color: #777;  
 }
-
+.virtual-screen {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 177.777vh;
+  max-width: 100vw;
+  min-height: 56.25vw;
+  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+}
 </style>
