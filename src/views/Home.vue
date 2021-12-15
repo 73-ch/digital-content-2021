@@ -50,6 +50,26 @@ export default {
 
 <style scoped>
 #home {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+iframe {
+  z-index: -5;
+  max-width: 1920px;
+  max-height: 1080px;
+  width: 1920px;
+  height: 1080px;
+}
+.virtual-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+}
+
+/* #home {
   position: fixed;
 }
 iframe {
@@ -75,5 +95,5 @@ iframe {
   max-height: 100vh;
   width: 100vw;
   height: 100vh;
-}
+} */
 </style>
