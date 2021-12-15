@@ -1,16 +1,13 @@
 <template>
   <div>
-    <div class="header-mask"></div>
-    <div class="transparent"></div>
     <iframe
-      width="100%"
-      height="100%"
+      class="gallary"
       :src="`https://www.youtube.com/embed/${id}?controls=0&autoplay=1&mute=1`"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
-    ></iframe>
+    />
   </div>
 </template>
 
@@ -23,16 +20,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.header-mask {
+.gallary {
+  z-index: -1;
   position: absolute;
-  width: 100%;
-  height: 12.8%;
-  background: black;
-}
-.transparent {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  min-height: 56.25vw;
+  width: 100vw;
+  height: 114vh;
 }
 </style>

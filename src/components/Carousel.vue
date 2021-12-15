@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel">
+  <div>
     <Arrow direction="left" v-on:click="increment" />
     <div class="exhibition-container">
       <Exhibition
@@ -18,7 +18,7 @@
 import Exhibition from "./Exhibition.vue";
 import Arrow from "./Arrow.vue";
 
-const transitionTime = 0.6;
+const transitionTime = 1;
 
 export default {
   components: {
@@ -95,26 +95,20 @@ export default {
 </script>
 
 <style scoped lang="scss">
-$height: 800px;
-
-.carousel {
-  display: flex;
-  flex-direction: row;
-  height: $height;
-}
-
 .exhibition-container {
-  position: relative;
-  width: 800px;
-  height: $height;
+  width: 100vw;
+  height: 100vh;
+  background: black;
 
   .exhibition {
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0;
+    z-index: 0;
     &.visible {
       opacity: 1;
+      z-index: 1;
     }
   }
 }

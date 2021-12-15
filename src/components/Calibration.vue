@@ -178,11 +178,11 @@ export default {
   },
   computed: {
     computedTransform() {
-      let transformString = `translate3d(${this.translateX}px, ${this.translateY}px, ${this.translateZ}px) `;
+      let transformString = `scale3d(${this.scaleX}, ${this.scaleY}, 1 )`;
       transformString += `rotate3d(1, 0, 0,${this.rotateX}deg) `;
       transformString += `rotate3d(0, 1, 0,${this.rotateY}deg) `;
       transformString += `rotate3d(0, 0, 1,${this.rotateZ}deg) `;
-      transformString += `scale3d(${this.scaleX}, ${this.scaleY}, 1 )`;
+      transformString += `translate3d(${this.translateX}px, ${this.translateY}px, ${this.translateZ}px) `;
       return transformString;
     },
   },
@@ -273,7 +273,7 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
-  /* z-index: -1; */
+  z-index: 10;
 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
