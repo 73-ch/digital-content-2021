@@ -87,6 +87,9 @@ export default {
 
 <style scoped lang="scss">
 .credit {
+  font-family: dnp-shuei-nmincho-std, sans-serif;
+  font-style: normal;
+  font-weight: normal;
   width: 100vw;
   height: 100vh;
   padding: 1.6rem;

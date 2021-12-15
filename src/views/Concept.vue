@@ -28,6 +28,9 @@ export default {
 
 <style scoped lang="scss">
 .concept {
+  font-family: dnp-shuei-nmincho-std, sans-serif;
+  font-style: normal;
+  font-weight: normal;
   width: 100vw;
   min-height: 100vh;
   padding: 1.6rem;
