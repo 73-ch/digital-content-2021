@@ -19,7 +19,7 @@
 import Carousel from "@/components/Carousel.vue";
 import Calibration from "@/components/Calibration.vue";
 import Window from "@/components/Window.vue";
-import config from "../config";
+import config from "../config.json";
 
 export default {
   components: { Carousel, Calibration, Window, },

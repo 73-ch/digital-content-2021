@@ -24,23 +24,21 @@ export default {
   data() {
     return {
       color: getColor(),
-      targetElement: null,
       parentElement: null,
       debugMode: process.env.NODE_ENV === "development",
     };
   },
   mounted() {
-    // if (this.debugMode) return;
+    const targetElement = document.getElementById(this.id);
+    targetElement.style.opacity = process.env.NODE_ENV === "development" ? 0.7 : 0;
+
     const transform = getTransformJson(this.id);
     if (transform === undefined) return;
-    const targetElement = document.getElementById(this.id);
 
-    this.targetElement = targetElement;
-    this.parentElement = targetElement.parentElement;
-    this.parentElement.style.transformStyle = "preserve-3d";
-    this.parentElement.style.perspective = transform.perspective + "px";
-    this.targetElement.style.transform = transform.transformString;
-    targetElement.style.opacity = process.env.NODE_ENV === "development" ? 0.7 : 0;
+    const parentElement = targetElement.parentElement;
+    parentElement.style.transformStyle = "preserve-3d";
+    parentElement.style.perspective = transform.perspective + "px";
+    targetElement.style.transform = transform.transformString;
   }
 };
 </script>
