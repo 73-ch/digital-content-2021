@@ -32,7 +32,7 @@ export default {
 .home {
   font-family: dnp-shuei-nmincho-std, sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: bold;
   width: 1920px;
   height: 1009px;
   padding: 1.6rem;
