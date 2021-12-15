@@ -195,6 +195,21 @@ export default {
   },
   methods: {
     calibration() {
+
+      let transformJson = require("@/assets/calibration-data/" + this.targetId + ".json");
+
+      if (transformJson) {
+        this.perspective = transformJson.perspective;
+        this.translateX = transformJson.translateX;
+        this.translateY = transformJson.translateY;
+        this.translateZ = transformJson.translateZ;
+        this.rotateX = transformJson.rotateX;
+        this.rotateY = transformJson.rotateY;
+        this.rotateZ = transformJson.rotateZ;
+        this.scaleX = transformJson.scaleX;
+        this.scaleY = transformJson.scaleY;
+      }
+
       // キャリブレーションするエレメント
       let targetElement = document.getElementById(this.targetId);
 
