@@ -26,33 +26,22 @@ export default {
   },
   data() {
     return {
-      targetElement: null,
-      parentElement: null,
       transform: transformJSON,
-      debugMode: false
+      debugMode: process.env.NODE_ENV !== "production",
     }
   },
   methods: {
     setVirtualScreen() {
-      console.log("called setVirtualScreen")
-      if (!this.debugMode) {
-        let targetElement = document.getElementById("dummy");
-
-        this.targetElement = targetElement;
-        this.parentElement = targetElement.parentElement;
-        this.parentElement.style.transformStyle = "preserve-3d";
-        this.parentElement.style.perspective = this.transform.perspective + "px";
-        this.parentElement.style.transformStyle = "flat";
-
-        this.targetElement.style.transform = this.transform.transformString;
-
-        targetElement.style.opacity = 0.0;
-      }
+      const targetElement = document.getElementById("dummy");
+      targetElement.style.opacity = this.debugMode ? 0.7 : 0.0;
+      const parentElement = targetElement.parentElement;
+      parentElement.style.transformStyle = "preserve-3d";
+      parentElement.style.perspective = this.transform.perspective + "px";
+      parentElement.style.transformStyle = "flat";
+      targetElement.style.transform = this.transform.transformString;
     }
   },
   mounted() {
-    this.debugMode = process.env.NODE_ENV === "production"
-
     this.setVirtualScreen()
     window.addEventListener('resize', this.setVirtualScreen)
   }
