@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from "@/views/Home";
+import broadCast from '@/views/broadCast.vue'
 import Dummy from '@/views/Dummy.vue'
+import Home from "@/views/Home";
 import Concept from '@/views/Concept.vue'
 import Credit from '@/views/Credit.vue'
 
@@ -9,6 +10,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/broadCast',
+    name: 'broadCast',
+    component: broadCast
   },
   {
     path: '/dummy',
