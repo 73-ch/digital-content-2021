@@ -32,7 +32,6 @@ export default {
 .home-footer {
   height: $height__home-footer;
   width: $width__home-contents;
-  //padding: 0 2rem;
   &__btns {
     //margin-left: $width__home-contents-side;
     display: flex;

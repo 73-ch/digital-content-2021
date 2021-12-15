@@ -24,7 +24,7 @@
         </div>
         <div class="home-contents-main__info-lines">
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Host : Media Arts, Science and Technology</div>
-          <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Date : Dec. 16(Thu) - Dec. 20(MOn), 2021</div>
+          <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Date : Dec. 16(Thu) - Dec. 20(Mon), 2021</div>
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Time : 10:00 ~ 20:00</div>
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Price : Free</div>
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Venue : Online</div>
@@ -105,12 +105,12 @@ export default {
   font-size: $font-size__small;
   width: $width__home-contents;
   //height: $height__home-content;
-  padding: 2rem 0;
+  padding: 32px 0;
   display: flex;
   justify-content: space-between;
   &-side {
     width: $width__home-contents-side;
-    line-height: 1.6rem;
+    line-height: 25.6px;
   }
   &-main {
     width: $width__home-contents-main;
@@ -125,11 +125,11 @@ export default {
       }
     }
     &__info {
-      margin-top: 0.6rem;
+      margin-top: 9.6px;
       &-title {
         color: $color__yellow;
         font-style: italic;
-        margin-bottom: 0.38rem;
+        margin-bottom: 6.08px;
       }
       &-lines {
         transform: translateX(-10px);
@@ -137,9 +137,9 @@ export default {
           color: $color__red;
         }
         &__line {
-          line-height: 1.1rem;
+          line-height: 17.6px;
           &:last-child {
-            margin-top: 0.6rem;
+            margin-top: 9.6px;
           }
         }
       }
@@ -157,7 +157,7 @@ export default {
       }
     }
     &__flyer {
-      margin-top: 0.3rem;
+      margin-top: 4.8px;
       &-banner {
         img {
           width: 100%;
@@ -165,7 +165,7 @@ export default {
         }
       }
       &-message {
-        margin-top: 0.4rem;
+        margin-top: 6.4px;
       }
     }
   }
