@@ -4,6 +4,7 @@
       <p style="background: black">キャリブレーション</p>
       <input v-model="targetId" placeholder="IDを入力" />
       <button @click="calibration">実行</button>
+      <slot/>
     </div>
     <div id="params">
       <div id="name">Tag ID: {{ targetId }}</div>
@@ -272,7 +273,7 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: -1;
+  /* z-index: -1; */
 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;

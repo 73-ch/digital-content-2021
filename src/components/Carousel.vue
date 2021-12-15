@@ -80,6 +80,17 @@ export default {
         return `transition: all ${transitionTime}s`;
     }
   },
+  mounted() {
+    if (process.env.NODE_ENV !== "development") return;
+    document.addEventListener('keydown', (event) => {
+      const keyName = event.key;
+      if (keyName === "ArrowRight") {
+        this.increment();
+      } else if (keyName === "ArrowLeft") {
+        this.decrement();
+      }
+    });
+  },
 };
 </script>
 
