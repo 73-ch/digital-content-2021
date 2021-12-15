@@ -22,6 +22,7 @@
           <label for="perspective">Perspective: </label>
           <span id="val_perspective">{{ perspective }}</span
           ><span>px</span>
+          <span><input type="text" v-model="setPerspective" class="set_param"/></span>
         </div>
         <input
           type="range"
@@ -37,12 +38,13 @@
           <label for="translate_x">Translate X: </label>
           <span id="val_translate_x">{{ translateX }}</span
           ><span>px</span>
+          <span><input type="text" v-model="setTranslateX" class="set_param"/></span>
         </div>
         <input
           type="range"
           id="range_translate_x"
-          min="-1000"
-          max="1000"
+          min="-1500"
+          max="1500"
           step="1"
           v-model="translateX"
         />
@@ -52,12 +54,13 @@
           <label for="translate_y">Translate Y: </label>
           <span id="val_translate_y">{{ translateY }}</span
           ><span>px</span>
+          <span><input type="text" v-model="setTranslateY" class="set_param"/></span>
         </div>
         <input
           type="range"
           id="range_translate_y"
-          min="-1000"
-          max="1000"
+          min="-500"
+          max="500"
           step="1"
           v-model="translateY"
         />
@@ -67,12 +70,13 @@
           <label for="translate_z">Translate Z: </label>
           <span id="val_translate_z">{{ translateZ }}</span
           ><span>px</span>
+          <span><input type="text" v-model="setTranslateZ" class="set_param"/></span>
         </div>
         <input
           type="range"
           id="range_translate_z"
-          min="-1000"
-          max="1000"
+          min="-500"
+          max="500"
           step="1"
           v-model="translateZ"
         />
@@ -82,6 +86,7 @@
           <label for="rotate_x">Rotate X: </label>
           <span id="val_rotate_x">{{ rotateX }}</span
           ><span>deg</span>
+          <span><input type="text" v-model="setRotateX" class="set_param"/></span>
         </div>
         <input
           type="range"
@@ -97,6 +102,7 @@
           <label for="rotate_y">Rotate Y: </label>
           <span id="val_rotate_y">{{ rotateY }}</span
           ><span>deg</span>
+          <span><input type="text" v-model="setRotateY" class="set_param"/></span>
         </div>
         <input
           type="range"
@@ -112,6 +118,7 @@
           <label for="rotate_y">Rotate Z: </label>
           <span id="val_rotate_z">{{ rotateZ }}</span
           ><span>deg</span>
+          <span><input type="text" v-model="setRotateZ" class="set_param"/></span>
         </div>
         <input
           type="range"
@@ -126,6 +133,7 @@
         <div>
           <label for="scale_x">Scale X: </label>
           <span id="val_scale_x">{{ scaleX }}</span>
+          <span><input type="text" v-model="setScaleX" class="set_param"/></span>
         </div>
         <input
           type="range"
@@ -140,6 +148,7 @@
         <div>
           <label for="scale_y">Scale Y: </label>
           <span id="val_scale_y">{{ scaleY }}</span>
+          <span><input type="text" v-model="setScaleY" class="set_param"/></span>
         </div>
         <input
           type="range"
@@ -184,6 +193,78 @@ export default {
       transformString += `scale3d(${this.scaleX}, ${this.scaleY}, 1 )`;
       return transformString;
     },
+    setPerspective: {
+      get() {
+        return this.perspective
+      },
+      set(value) {
+        this.perspective = value
+      }
+    },
+    setTranslateX: {
+      get() {
+        return this.translateX
+      },
+      set(value) {
+        this.translateX = value
+      }
+    },
+    setTranslateY: {
+      get() {
+        return this.translateY
+      },
+      set(value) {
+        this.translateY = value
+      }
+    },
+    setTranslateZ: {
+      get() {
+        return this.translateZ
+      },
+      set(value) {
+        this.translateZ = value
+      }
+    },
+    setRotateX: {
+      get() {
+        return this.rotateX
+      },
+      set(value) {
+        this.rotateX = value
+      }
+    },
+    setRotateY: {
+      get() {
+        return this.rotateY
+      },
+      set(value) {
+        this.rotateY = value
+      }
+    },
+    setRotateZ: {
+      get() {
+        return this.rotateZ
+      },
+      set(value) {
+        this.rotateZ = value
+      }
+    },
+    setScaleX: {
+      get() {
+        return this.scaleX
+      },
+      set(value) {
+        this.scaleX = value
+      }
+    },
+    setScaleY: {
+      get() {
+        return this.scaleY
+      },
+      set(value) {
+        this.scaleY = value
+      }
+    }
   },
   watch: {
     computedTransform(value) {
@@ -299,7 +380,7 @@ export default {
 #params {
   // ここは適当
   padding: 2% 2%;
-  width: 800px;
+  width: 400px;
   position: fixed;
   top: 80px;
   right: 0;
@@ -311,6 +392,10 @@ export default {
   font-size: calc(15px + 10%);
 
   visibility: hidden;
+}
+.set_param {
+  float: right; 
+  width: 50px;
 }
 #name {
   margin-bottom: 20px;
