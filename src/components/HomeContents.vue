@@ -61,7 +61,7 @@ export default {
     const workImageIndex = ref(0)
     const workImages = ref([])
     const revWorkImages = ref([])
-    const flyerBannerLink = computed(() => require("@/assets/images/flyer.png"))
+    const flyerBannerLink = computed(() => require("@/assets/images/work-list.jpg"))
     const filteredWorkImages = computed(() => getPartOfArray(workImages.value, workImageIndex.value, thumbnailNum))
     const revFilteredWorkImages = computed(() => getPartOfArray(revWorkImages.value, workImageIndex.value, thumbnailNum))
 
