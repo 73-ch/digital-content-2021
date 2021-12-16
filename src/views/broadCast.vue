@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='broad-cast'>
     <Carousel v-model:propIndex="index" :config="config" />
     <Calibration v-if="isDebugMode">
       <ul class="idList">
@@ -38,5 +38,12 @@ export default {
   position: relative;
   color: white;
   list-style-position: inline;
+}
+
+.broad-cast {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 </style>
