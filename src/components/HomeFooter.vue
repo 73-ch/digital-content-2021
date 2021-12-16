@@ -13,7 +13,7 @@
         <button class="link" @click="openPopupWindow('https://yoichiochiai.com/')">Ochiai Yoichi</button>
       </div>
       <div class="home-footer__btns-col">
-        <button class="link" @click="openPopupWindow('./credit')">Many Other members involved in this project</button>
+        <button class="link" @click="openPopupWindow('https://digicon.mast.tsukuba.ac.jp/concept')">Many Other members involved in this project</button>
       </div>
     </div>
   </footer>
