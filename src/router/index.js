@@ -4,6 +4,7 @@ import Dummy from '@/views/Dummy.vue'
 import Home from "@/views/Home";
 import Concept from '@/views/Concept.vue'
 import Credit from '@/views/Credit.vue'
+import YoutubeViewer from "@/views/YoutubeViewer";
 
 const routes = [
   {
@@ -30,6 +31,12 @@ const routes = [
     path: '/credit',
     name: 'Credit',
     component: Credit
+  },
+  {
+    path: '/viewer',
+    name: 'Viewer',
+    component: YoutubeViewer,
+    props: true
   },
   {
     // それ以外はホーム画面に遷移
