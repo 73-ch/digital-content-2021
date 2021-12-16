@@ -38,7 +38,7 @@
       </div>
       <div class="home-contents-works__flyer">
         <div class="home-contents-works__flyer-banner">
-          <a :href="flyerBannerLink" download="banner.png"><img src="@/assets/images/flyer_banner.png"></a>
+          <a :href="flyerBannerLink" download="flyer.png"><img src="@/assets/images/flyer_banner.png"></a>
         </div>
         <div class="home-contents-works__flyer-message">
           是非ダウンロードしてお手元にご用意して頂いてからご覧ください。
