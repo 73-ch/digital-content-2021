@@ -37,10 +37,16 @@ const routes = [
     path: '/viewer',
     name: 'Viewer',
     component: YoutubeViewer,
-  },{
+  },
+  {
     path: '/viewer2',
     name: 'Viewer2',
     component: YoutubeViewer2,
+  },
+  {
+    // それ以外はホーム画面に遷移
+    path: '/:notFound(.*)',
+    redirect: '/'
   }
 ]
 
