@@ -1,0 +1,11 @@
+{
+    "transformString": "translate3d(475px, 335px, 459px) rotate3d(1, 0, 0,47.4deg) rotate3d(0, 1, 0,1deg) rotate3d(0, 0, 1,0deg) scale3d(0.72, 0.92, 1 )",
+    "translateX": "475",
+    "translateY": "335",
+    "translateZ": "459",
+    "rotateX": "47.4",
+    "rotateY": "1",
+    "rotateZ": 0,
+    "scaleX": "0.72",
+    "scaleY": "0.92"
+}
