@@ -11,7 +11,7 @@
         />
       </div>
       <div class="home-contents-main__concept">
-        <img @click="openPopupWindow('http://localhost:8080/concept')" src="@/assets/images/concept_banner.png">
+        <img @click="openPopupWindow('./concept')" src="@/assets/images/concept_banner.png">
       </div>
       <div class="home-contents-main__work-lower">
         <work-list
