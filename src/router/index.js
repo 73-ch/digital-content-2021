@@ -4,6 +4,8 @@ import Dummy from '@/views/Dummy.vue'
 import Home from "@/views/Home";
 import Concept from '@/views/Concept.vue'
 import Credit from '@/views/Credit.vue'
+import YoutubeViewer from "@/views/YoutubeViewer";
+import YoutubeViewer2 from "@/views/YoutubeViewer2";
 
 const routes = [
   {
@@ -32,15 +34,29 @@ const routes = [
     component: Credit
   },
   {
-    // それ以外はホーム画面に遷移
-    path: '/:notFound(.*)',
-    redirect: '/'
+    path: '/viewer',
+    name: 'Viewer',
+    component: YoutubeViewer,
+  },{
+    path: '/viewer2',
+    name: 'Viewer2',
+    component: YoutubeViewer2,
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.name === "Concept" || to.name === "Credit") {
+    if (typeof(to.query.p) !== 'string') {
+      return next()
+    }
+  } else {
+    return next()
+  }
 })
 
 export default router

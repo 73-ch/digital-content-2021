@@ -1,63 +1,143 @@
 [
   {
     "youtubeId": "a_2Qwgc4SkA",
-    "authorList": [
-      "s1911441",
-      "s1911442"
+    "workList": [
+      {
+        "author": "nowatari",
+        "url": "./viewer?width=560&height=315&id=Ie8skhh9cxw&title=8mm%20evolution&creator=野渡蒼美&number=A-1"
+      },
+      {
+        "author": "hirato",
+        "url": "https://script.google.com/macros/s/AKfycbxSY7BAeUve2cQ4tpIwt3GY_mHmy_YcKeUWN9uuuV9I7PCpJoyQxwq2rkLND8ejneh7/exec"
+      }
     ]
   },
   {
     "youtubeId": "PuSaT5OHJMo",
-    "authorList": [
-      "s1911439",
-      "s1911440"
+    "workList": [
+      {
+        "author": "torii",
+        "url": "./viewer2?width=560&height=315&id1=6K_z6VwgmmE&id2=9JKYf6_HJwI&title=%E3%81%AA%E3%82%81%E3%81%8F%E3%81%98%E3%80%80%E3%80%9C%E5%BD%BC%E3%82%89%E3%81%AE%E7%94%9F%E6%B4%BB%E3%80%9C&creator=%E9%B3%A5%E5%B1%85%E4%B8%87%E6%A4%B0&number=B-1"
+      },
+      {
+        "author": "tosa",
+        "url": "./viewer?width=560&height=315&id=RdPWVk5R5lY&title=なんだって生きようとする&creator=土佐凜斗&number=B-2"
+      }
     ]
   },
   {
     "youtubeId": "3B2uRjueiMM",
-    "authorList": [
-      "s1911443",
-      "s1911444"
+    "workList": [
+      {
+        "author": "sakurai",
+        "url": "./viewer?width=560&height=315&id=1uzm59i1LuE&title=文サーカス&creator=櫻井澄香&number=C-1"
+      },
+      {
+        "author": "tunoda",
+        "url": "https://2ndr9.github.io/a/"
+      }
     ]
   },
   {
     "youtubeId": "VHhboKkwf4A",
-    "authorList": [
+    "workList": [
+      {
+        "author": "nagaisi",
+        "url": "https://another-room.netlify.app/"
+      },
+      {
+        "author": "utida",
+        "url": "./viewer?width=560&height=315&id=l4bDVq-nP-0&title=Hacked%20Space&creator=内田大智&number=D-2"
+      }
     ]
   },
   {
     "youtubeId": "h9qnOlGrrNA",
-    "authorList": [
+    "workList": [
+      {
+        "author": "nisimura",
+        "url": "https://hotoke-to-watashi.netlify.app/"
+      },
+      {
+        "author": "konisi",
+        "url": "https://a-second.herokuapp.com/"
+      }
     ]
   },
   {
     "youtubeId": "u8osACSCd_Q",
-    "authorList": [
+    "workList": [
+      {
+        "author": "umetu",
+        "url": "https://www.u.tsukuba.ac.jp/~s1911397/shishiodoshi.html"
+      },
+      {
+        "author": "kitaoka",
+        "url": "https://kitaokan.github.io/"
+      }
     ]
   },
   {
     "youtubeId": "eKpqeoZNHe8",
-    "authorList": [
+    "workList": [
+      {
+        "author": "inose",
+        "url": "./viewer?width=560&height=315&id=T9cqxe_TxQc&title=Soluble%20Self&creator=猪瀬暖基&number=G-1"
+      }
     ]
   },
   {
     "youtubeId": "6uGRz4yZQac",
-    "authorList": [
+    "workList": [
+      {
+        "author": "namikawa",
+        "url": "https://scrolling.73ch.work/"
+      },
+      {
+        "author": "okamura",
+        "url": "https://miro.com/app/board/uXjVOaDyfXs=/"
+      }
     ]
   },
   {
     "youtubeId": "WC1C1sefilQ",
-    "authorList": [
+    "workList": [
+      {
+        "author": "yamaura",
+        "url": "https://mauer.kzkymur.com/"
+      },
+      {
+        "author": "hukunaga",
+        "url": "./viewer?width=560&height=315&id=l4bDVq-nP-0&title=nudist&creator=福永将也&number=I-2"
+      }
     ]
   },
   {
     "youtubeId": "YFvQ_Q9xsGI",
-    "authorList": [
+    "workList": [
+      {
+        "author": "suzuki",
+        "url": "./viewer?width=560&height=315&id=YZdjpaFXWbw&title=Dreamedium&creator=鈴木紫琉&number=J-1",
+        "_comment": "YouTube埋め込み"
+      },
+      {
+        "author": "nagakura",
+        "url": ""
+      }
     ]
   },
   {
     "youtubeId": "bdwo8Gvwflk",
-    "authorList": [
+    "workList": [
+      {
+        "author": "haga",
+        "url": "./viewer?width=560&height=315&id=1Dpt9TyfYPE&title=%E6%BD%9C%E3%82%80%E7%A7%81%E3%80%81%E6%BD%9C%E3%82%80%E3%81%82%E3%81%AA%E3%81%9F&creator=%E8%8A%B3%E8%B3%80%E9%83%81%E5%BC%A5&number=K-1",
+        "_comment": "YouTube埋め込み"
+      },
+      {
+        "author": "yokoyama",
+        "url": ""
+      }
     ]
   }
 ]
