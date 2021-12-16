@@ -33,8 +33,8 @@ export default {
   font-family: dnp-shuei-nmincho-std, sans-serif;
   font-style: normal;
   font-weight: bold;
-  width: 1920px;
-  height: 1009px;
+  width: 100%;
+  height: 100%;
   padding: 25.6px;
   background-repeat: repeat;
   background-size: cover;

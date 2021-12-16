@@ -1,8 +1,9 @@
 <template>
   <div id="home">
-    <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0"></iframe>
+    <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1"
+        title="YouTube video player" frameborder="0"></iframe>
     <div class="virtual-screen">
-      <dummy id="dummy"/>
+      <dummy id="dummy" />
     </div>
   </div>
   <calibration v-if="debugMode"/>
@@ -33,17 +34,17 @@ export default {
   methods: {
     setVirtualScreen() {
       const targetElement = document.getElementById("dummy");
-      targetElement.style.opacity = this.debugMode ? 0.7 : 0.0;
-      // const parentElement = targetElement.parentElement;
-      // parentElement.style.transformStyle = "preserve-3d";
-      // parentElement.style.perspective = this.transform.perspective + "px";
-      // parentElement.style.transformStyle = "flat";
+      targetElement.style.opacity = this.debugMode ? 0.7 : 0.1;
+      const parentElement = targetElement.parentElement;
+      parentElement.style.transformStyle = "preserve-3d";
+      parentElement.style.perspective = this.transform.perspective + "px";
+      parentElement.style.transformStyle = "flat";
       targetElement.style.transform = this.transform.transformString;
     }
   },
   mounted() {
     this.setVirtualScreen()
-    window.addEventListener('resize', this.setVirtualScreen)
+    // window.addEventListener('resize', this.setVirtualScreen)
   }
 }
 </script>
@@ -52,6 +53,7 @@ export default {
 #home {
   position: fixed;
 }
+
 iframe {
   position: fixed;
   z-index: -5;
@@ -65,10 +67,12 @@ iframe {
   width: 100vw;
   height: 100vh;
 }
+
 .virtual-screen {
   position: fixed;
   top: 50%;
   left: 50%;
+  transform-origin: center;
   transform: translate(-50%, -50%);
   min-width: 177.777vh;
   min-height: 56.25vw;
