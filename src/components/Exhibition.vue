@@ -31,6 +31,6 @@ export default {
   /* width: 100vw; */
   /* height: 114vh; */
   width: 100%;
-  height: 100%;
+  height: 112%;
 }
 </style>
