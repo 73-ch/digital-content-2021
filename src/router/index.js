@@ -49,4 +49,14 @@ const router = createRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  if (to.name === "Concept" || to.name === "Credit") {
+    if (typeof(to.query.p) !== 'string') {
+      return next()
+    }
+  } else {
+    return next()
+  }
+})
+
 export default router

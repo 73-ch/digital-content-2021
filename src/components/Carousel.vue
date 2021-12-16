@@ -96,9 +96,14 @@ export default {
 
 <style scoped lang="scss">
 .exhibition-container {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw; */
+  /* height: 100vh; */
+  position: absolute;
+  margin: auto 0;
+  width: 100%;
+  height: 100%;
   background: black;
+  overflow: hidden;
 
   .exhibition {
     position: absolute;
@@ -106,6 +111,7 @@ export default {
     height: 100%;
     opacity: 0;
     z-index: 0;
+    pointer-events: none;
     &.visible {
       opacity: 1;
       z-index: 1;

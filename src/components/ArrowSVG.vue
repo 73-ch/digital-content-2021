@@ -4,7 +4,7 @@
   </defs><g id="レイヤー_2" data-name="レイヤー 2"><g id="レイヤー_1-2" data-name="レイヤー 1"><path class="cls-1" d="M71.5,32.5l-68,1,29-30"/></g></g></svg>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .cls-1{
   fill: none;
   stroke: #ccc;
