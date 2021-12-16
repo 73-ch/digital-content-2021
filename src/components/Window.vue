@@ -35,9 +35,9 @@ export default {
     const transform = getTransformJson(this.id);
     if (transform === undefined) return;
 
-    const parentElement = targetElement.parentElement;
-    parentElement.style.transformStyle = "preserve-3d";
-    parentElement.style.perspective = transform.perspective + "px";
+    // const parentElement = targetElement.parentElement;
+    // parentElement.style.transformStyle = "preserve-3d";
+    // parentElement.style.perspective = transform.perspective + "px";
     targetElement.style.transform = transform.transformString;
   }
 };
