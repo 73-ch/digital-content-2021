@@ -14,7 +14,7 @@
           allowfullscreen></iframe>
     </section>
     <section class="control">
-      <button @click="close">閉じる</button>
+      <div class="btn" @click="close">閉じる</div>
     </section>
 
   </main>
@@ -34,7 +34,7 @@ export default {
 <style scoped>
 main {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -76,5 +76,30 @@ flex-wrap: wrap;
 
 .control {
   margin: 50px 0;
+}
+
+.btn {
+  color: #000;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn::before {
+  font-size: 20px;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.829);
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: all 0.6s ease-out;
+  opacity: 0;
+}
+
+.btn:hover::before {
+  transform: translateX(0%);
+  opacity: 1;
 }
 </style>
