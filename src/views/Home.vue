@@ -1,6 +1,7 @@
 <template>
   <div id="home">
     <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1&rel=0&vq=highres" title="YouTube video player" frameborder="0"></iframe>
+    <div class="youtube-hide"></div>
     <div class="virtual-screen">
       <dummy id="dummy" />
     </div>
@@ -33,7 +34,7 @@ export default {
   methods: {
     setDummy() {
       const targetElement = document.getElementById("dummy");
-      targetElement.style.opacity = this.debugMode ? 0.7 : 0.1;
+      targetElement.style.opacity = this.debugMode ? 0.7 : 0.0;
       const parentElement = targetElement.parentElement;
       parentElement.style.transformStyle = "preserve-3d";
       parentElement.style.perspective = "600px";
@@ -76,6 +77,12 @@ iframe {
   max-width: 100vw;
   min-height: 56.25vw;
   max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+}
+
+.youtube-hide {
+  z-index: -2;
   width: 100vw;
   height: 100vh;
 }
