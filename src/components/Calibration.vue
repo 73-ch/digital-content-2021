@@ -17,6 +17,22 @@
         />
       </div>
       <p class="param">{{ computedTransform }}</p>
+      <div id="perspective" class="param">
+        <div>
+          <label for="perspective">Perspective: </label>
+          <span id="val_perspective">{{ perspective }}</span
+          ><span>px</span>
+          <span><input type="text" v-model="setPerspective" class="set_param"/></span>
+        </div>
+        <input
+          type="range"
+          id="range_perspective"
+          min="0"
+          max="1500"
+          step="1"
+          v-model="perspective"
+        />
+      </div>
       <div id="translate_x" class="param">
         <div>
           <label for="translate_x">Translate X: </label>
@@ -156,6 +172,7 @@ export default {
       targetElement: null,
       parentElement: null,
       params: {},
+      perspective: 600,
       translateX: 0,
       translateY: 0,
       translateZ: 0,
@@ -175,6 +192,14 @@ export default {
       transformString += `rotate3d(0, 0, 1,${this.rotateZ}deg) `;
       transformString += `scale3d(${this.scaleX}, ${this.scaleY}, 1 )`;
       return transformString;
+    },
+    setPerspective: {
+      get() {
+        return this.perspective
+      },
+      set(value) {
+        this.perspective = value
+      }
     },
     setTranslateX: {
       get() {
@@ -280,7 +305,7 @@ export default {
       this.targetElement = targetElement;
       this.parentElement = targetElement.parentElement;
       this.parentElement.style.transformStyle = "preserve-3d";
-      this.parentElement.style.perspective = "600px";
+      this.parentElement.style.perspective = this.perspective + "px";
 
       // ターゲットのvisibilityを扱うためのエレメント
       let view = document.getElementById("checkbox_view");
@@ -311,6 +336,7 @@ export default {
 
       const data = {
         transformString: this.computedTransform,
+        perspective: this.perspective,
         translateX: this.translateX,
         translateY: this.translateY,
         translateZ: this.translateZ,
