@@ -1,17 +1,17 @@
 <template>
-  <div>
+  <div class='broad-cast' :style="{ overflow: isDebugMode ? 'visible' : 'hidden' }">
+    <Window
+      v-for="work in config[index].workList"
+      :key="work.author"
+      :work="work" />
     <Carousel v-model:propIndex="index" :config="config" />
     <Calibration v-if="isDebugMode">
       <ul class="idList">
-        <li v-for="id in config[index].authorList" :key="id">
-          {{ id }}
+        <li v-for="work in config[index].workList" :key="work.author">
+          {{ work.author }}
         </li>
       </ul>
     </Calibration>
-    <Window
-      v-for="id in config[index].authorList"
-      :key="id"
-      :id="id" />
   </div>
 </template>
 
@@ -38,5 +38,23 @@ export default {
   position: relative;
   color: white;
   list-style-position: inline;
+}
+
+.broad-cast {
+  position: absolute;
+  /* width: 100vw; */
+  /* height: 100vh; */
+  width: 1280px;
+  height: 720px;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
+
+<style>
+body {
+  background: white;
 }
 </style>

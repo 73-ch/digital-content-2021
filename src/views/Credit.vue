@@ -92,7 +92,7 @@ export default {
   font-weight: normal;
   width: 100vw;
   height: 100vh;
-  padding: 1.6rem;
+  padding: 25.6px;
   background-repeat: repeat;
   background-size: cover;
   .wrapper {
@@ -108,13 +108,13 @@ export default {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      margin-top: 0.618rem;
+      margin-top: 9.88px;
       &-label {
         width: 160px;
       }
       &-name {
         text-align: left;
-        margin-left: 0.6rem;
+        margin-left: 9.6px;
       }
     }
   }

@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0"></iframe>
+    <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1&rel=0&vq=highres" title="YouTube video player" frameborder="0"></iframe>
     <div class="virtual-screen">
       <dummy id="dummy"/>
     </div>
@@ -50,6 +50,26 @@ export default {
 
 <style scoped>
 #home {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+iframe {
+  z-index: -5;
+  max-width: 1600px;
+  max-height: 900px;
+  width: 1600px;
+  height: 900px;
+}
+.virtual-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1600px;
+  height: 900px;
+}
+
+/* #home {
   position: fixed;
 }
 iframe {
@@ -74,5 +94,5 @@ iframe {
   min-height: 56.25vw;
   width: 100vw;
   height: 100vh;
-}
+} */
 </style>

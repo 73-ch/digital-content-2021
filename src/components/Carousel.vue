@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Arrow direction="left" v-on:click="increment" />
+    <Arrow direction="left" v-on:click="decrement" />
     <div class="exhibition-container">
       <Exhibition
         v-for="(id, i) in subIdList"
@@ -10,7 +10,7 @@
         :id="id"
       />
     </div>
-    <Arrow direction="right" v-on:click="decrement" />
+    <Arrow direction="right" v-on:click="increment" />
   </div>
 </template>
 
@@ -96,9 +96,14 @@ export default {
 
 <style scoped lang="scss">
 .exhibition-container {
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw; */
+  /* height: 100vh; */
+  position: absolute;
+  margin: auto 0;
+  width: 100%;
+  height: 100%;
   background: black;
+  overflow: hidden;
 
   .exhibition {
     position: absolute;
@@ -106,6 +111,7 @@ export default {
     height: 100%;
     opacity: 0;
     z-index: 0;
+    pointer-events: none;
     &.visible {
       opacity: 1;
       z-index: 1;

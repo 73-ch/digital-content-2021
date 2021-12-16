@@ -150,6 +150,15 @@
 </template>
 
 <script>
+
+function getTransformJson(id) {
+  try {
+    return require(`@/assets/calibration-data/${id}.json`);
+  } catch {
+    return;
+  }
+}
+
 export default {
   data() {
     return {
@@ -170,11 +179,11 @@ export default {
   },
   computed: {
     computedTransform() {
-      let transformString = `scale3d(${this.scaleX}, ${this.scaleY}, 1 )`;
+      let transformString = `translate3d(${this.translateX}px, ${this.translateY}px, ${this.translateZ}px) `;
       transformString += `rotate3d(1, 0, 0,${this.rotateX}deg) `;
       transformString += `rotate3d(0, 1, 0,${this.rotateY}deg) `;
       transformString += `rotate3d(0, 0, 1,${this.rotateZ}deg) `;
-      transformString += `translate3d(${this.translateX}px, ${this.translateY}px, ${this.translateZ}px) `;
+      transformString += `scale3d(${this.scaleX}, ${this.scaleY}, 1 )`;
       return transformString;
     },
     setTranslateX: {
@@ -250,7 +259,7 @@ export default {
   methods: {
     calibration() {
 
-      let transformJson = require("@/assets/calibration-data/" + this.targetId + ".json");
+      let transformJson = getTransformJson(this.id);
 
       if (transformJson) {
         this.translateX = transformJson.translateX;

@@ -38,7 +38,8 @@ const routes = [
     path: '/viewer',
     name: 'Viewer',
     component: YoutubeViewer,
-  },{
+  },
+  {
     path: '/viewer2',
     name: 'Viewer2',
     component: YoutubeViewer2,
@@ -48,11 +49,26 @@ const routes = [
     name: 'accessDeny',
     component: AccessDeny,
   },
+  {
+    // それ以外はホーム画面に遷移
+    path: '/:notFound(.*)',
+    redirect: '/'
+  }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.name === "Concept" || to.name === "Credit") {
+    if (typeof(to.query.p) !== 'string') {
+      return next()
+    }
+  } else {
+    return next()
+  }
 })
 
 export default router

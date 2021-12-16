@@ -26,9 +26,11 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 100vw;
-  min-height: 56.25vw;
-  width: 100vw;
-  height: 114vh;
+  /* max-width: 100vw; */
+  /* min-height: 56.25vw; */
+  /* width: 100vw; */
+  /* height: 114vh; */
+  width: 100%;
+  height: 112%;
 }
 </style>

@@ -22,7 +22,8 @@ export default {
   transform: translateY(-50%);
   background: rgb(140, 140, 140); /* 明日調整 */
   width: 13%; /* 明日調整 */
-  height: 56.25vw;
+  /* height: 56.25vw; */
+  height: 100%;
   z-index: 5;
   cursor: pointer;
 

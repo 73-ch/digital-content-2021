@@ -6,7 +6,7 @@
     <script>
       // 参考資料：https://maku.blog/p/9u8it5f/
       // Web サイトをサブディレクトリに配置するなら、この値を 1 にする。
-      const SEGMENT_COUNT = 1;
+      const SEGMENT_COUNT = 0;
 
       // 例えば、SEGMENT_COUNT = 1 の場合、
       // https://yourname.github.io/repo-name/book/123 のような URL のうち、
@@ -21,7 +21,10 @@
       const param = segments.slice(SEGMENT_COUNT).join('/');  //=> book/123
       const url = origin + '/' + repo + '?p=' + encodeURIComponent(param);
       loc.replace(url);
+      //
     </script>
+
+<!--    <meta http-equiv="refresh" content="0;URL='/'">-->
   </head>
   <body></body>
 </html>
