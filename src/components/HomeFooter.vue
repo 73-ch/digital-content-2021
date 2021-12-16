@@ -51,7 +51,7 @@ export default {
         height: 100%;
         margin: 2.5px;
         font-family: $font-family__default;
-        font-size: 14px;
+        font-size: $font-size__small;
         font-weight: bold;
         -webkit-appearance: none;
         -moz-appearance: none;
