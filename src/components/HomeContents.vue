@@ -34,7 +34,7 @@
     </div>
     <div class="home-contents-works home-contents-section">
       <div class="home-contents-works__img">
-        <img src="@/assets/images/navigation.png" @click="openPopupWindow('./broadCast')">
+        <router-link :to="{ name: 'broadCast' }" target="_blank"><img src="@/assets/images/navigation.png"></router-link>
       </div>
       <div class="home-contents-works__flyer">
         <div class="home-contents-works__flyer-banner">
