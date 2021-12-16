@@ -33,6 +33,11 @@ export default {
 .white {
   color: white;
   margin-top: 30px;
+  text-align: center;
+}
+
+a{
+  color: yellow;
 }
 
 .smartPhone {
