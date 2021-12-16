@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0"></iframe>
+    <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1&rel=0&vq=highres" title="YouTube video player" frameborder="0"></iframe>
     <div class="virtual-screen">
       <dummy id="dummy"/>
     </div>
