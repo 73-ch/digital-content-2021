@@ -4,6 +4,8 @@ import Dummy from '@/views/Dummy.vue'
 import Home from "@/views/Home";
 import Concept from '@/views/Concept.vue'
 import Credit from '@/views/Credit.vue'
+import YoutubeViewer from "@/views/YoutubeViewer";
+import YoutubeViewer2 from "@/views/YoutubeViewer2";
 
 const routes = [
   {
@@ -30,6 +32,15 @@ const routes = [
     path: '/credit',
     name: 'Credit',
     component: Credit
+  },
+  {
+    path: '/viewer',
+    name: 'Viewer',
+    component: YoutubeViewer,
+  },{
+    path: '/viewer2',
+    name: 'Viewer2',
+    component: YoutubeViewer2,
   }
 ]
 
