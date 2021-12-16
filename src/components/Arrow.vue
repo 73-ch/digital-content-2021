@@ -20,11 +20,11 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgb(140, 140, 140); /* 明日調整 */
-  width: 13%; /* 明日調整 */
+  background: rgba(255,255,255); /* 明日調整 */
+  width: 12%; /* 明日調整 */
   /* height: 56.25vw; */
   height: 100%;
-  z-index: 5;
+  z-index: 20;
   cursor: pointer;
 
   &.left {
@@ -40,7 +40,7 @@ export default {
 
   &:hover {
     .cls-1 {
-      stroke: #333;
+      stroke: #1c1c1c;
     }
   }
 
