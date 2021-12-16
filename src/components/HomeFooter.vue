@@ -58,6 +58,7 @@ export default {
       }
     }
     &-label {
+      font-size: $font-size__small;
       pointer-events: none;
     }
   }
