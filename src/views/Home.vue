@@ -56,17 +56,17 @@ export default {
 }
 iframe {
   z-index: -5;
-  max-width: 1920px;
-  max-height: 1080px;
-  width: 1920px;
-  height: 1080px;
+  max-width: 1600px;
+  max-height: 900px;
+  width: 1600px;
+  height: 900px;
 }
 .virtual-screen {
   position: absolute;
   top: 0;
   left: 0;
-  width: 1920px;
-  height: 1080px;
+  width: 1600px;
+  height: 900px;
 }
 
 /* #home {
