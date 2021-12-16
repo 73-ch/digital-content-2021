@@ -1,5 +1,12 @@
 <template>
-  <div :id="id" :style="{ background: color }" class="window">
+  <div
+    :id="work.author"
+    :style="{ background: color }"
+    :class="`window ${!debugMode ? 'production' : ''}`"
+    v-on:click="jumpToWorkLink"
+    v-on:mouseover="fadeIn"
+    v-on:mouseleave="fadeOut"
+  >
   </div>
 </template>
 
@@ -11,7 +18,7 @@ function getColor(){
 }
 function getTransformJson(id) {
   try {
-    return require(`@/assets/calibration-data/${id}test.json`);
+    return require(`@/assets/calibration-data/${id}.json`);
   } catch {
     return;
   }
@@ -19,25 +26,45 @@ function getTransformJson(id) {
 
 export default {
   props: {
+    work: {
+      author: String,
+      url: String,
+    },
     id: String,
   },
   data() {
+    const debugMode = process.env.NODE_ENV === "development";
     return {
-      color: getColor(),
+      color: debugMode ? getColor() : '#fff',
       parentElement: null,
-      debugMode: process.env.NODE_ENV === "development",
+      debugMode,
     };
   },
+  methods: {
+    jumpToWorkLink() {
+      window.open(this.work.url);
+    },
+    fadeIn() {
+      if (this.debugMode) return;
+      const targetElement = document.getElementById(this.work.author);
+      targetElement.style.opacity = 0.4;
+    },
+    fadeOut() {
+      if (this.debugMode) return;
+      const targetElement = document.getElementById(this.work.author);
+      targetElement.style.opacity = 0;
+    }
+  },
   mounted() {
-    const targetElement = document.getElementById(this.id);
+    const targetElement = document.getElementById(this.work.author);
     targetElement.style.opacity = process.env.NODE_ENV === "development" ? 0.7 : 0;
 
-    const transform = getTransformJson(this.id);
+    const transform = getTransformJson(this.work.author);
     if (transform === undefined) return;
 
-    const parentElement = targetElement.parentElement;
-    parentElement.style.transformStyle = "preserve-3d";
-    parentElement.style.perspective = transform.perspective + "px";
+    // const parentElement = targetElement.parentElement;
+    // parentElement.style.transformStyle = "preserve-3d";
+    // parentElement.style.perspective = transform.perspective + "px";
     targetElement.style.transform = transform.transformString;
   }
 };
@@ -45,8 +72,16 @@ export default {
 
 <style scoped lang="scss">
 .window {
+  z-index: 2;
   position: absolute;
   width: 192px;
   height: 108px;
+
+  &.production {
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    z-index: 10;
+  }
 }
 </style>

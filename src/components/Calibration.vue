@@ -250,7 +250,7 @@ export default {
   methods: {
     calibration() {
 
-      let transformJson = require("@/assets/calibration-data/" + this.targetId + ".json");
+      let transformJson = getTransformJson(this.id);
 
       if (transformJson) {
         this.translateX = transformJson.translateX;
@@ -330,6 +330,15 @@ export default {
     },
   },
 };
+
+function getTransformJson(id) {
+  try {
+    return require(`@/assets/calibration-data/${id}test.json`);
+  } catch {
+    return;
+  }
+}
+
 </script>
 
 <style scoped lang="scss">
