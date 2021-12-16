@@ -284,9 +284,9 @@ export default {
       targetElement.style.opacity = "0.8";
 
       this.targetElement = targetElement;
-      // this.parentElement = targetElement.parentElement;
-      // this.parentElement.style.transformStyle = "preserve-3d";
-      // this.parentElement.style.perspective = "600px";
+      this.parentElement = targetElement.parentElement;
+      this.parentElement.style.transformStyle = "preserve-3d";
+      this.parentElement.style.perspective = "600px";
 
       // ターゲットのvisibilityを扱うためのエレメント
       let view = document.getElementById("checkbox_view");
