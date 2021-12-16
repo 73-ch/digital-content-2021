@@ -16,7 +16,7 @@ function getColor(){
 }
 function getTransformJson(id) {
   try {
-    return require(`@/assets/calibration-data/${id}test.json`);
+    return require(`@/assets/calibration-data/${id}.json`);
   } catch {
     return;
   }
