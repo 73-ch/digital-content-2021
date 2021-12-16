@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Arrow direction="left" v-on:click="increment" />
+    <Arrow direction="left" v-on:click="decrement" />
     <div class="exhibition-container">
       <Exhibition
         v-for="(id, i) in subIdList"
@@ -10,7 +10,7 @@
         :id="id"
       />
     </div>
-    <Arrow direction="right" v-on:click="decrement" />
+    <Arrow direction="right" v-on:click="increment" />
   </div>
 </template>
 
