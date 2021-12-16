@@ -34,7 +34,7 @@
     </div>
     <div class="home-contents-works home-contents-section">
       <div class="home-contents-works__img">
-        <a href="#"><img src="@/assets/images/navigation.png"></a>
+        <router-link :to="{ name: 'broadCast' }" target="_blank"><img src="@/assets/images/navigation.png"></router-link>
       </div>
       <div class="home-contents-works__flyer">
         <div class="home-contents-works__flyer-banner">
@@ -153,6 +153,7 @@ export default {
     width: $width__home-contents-works;
     &__img {
       img {
+        cursor: pointer;
         width: 100%;
       }
     }

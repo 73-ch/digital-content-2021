@@ -61,11 +61,11 @@ export default {
 
     const transform = getTransformJson(this.work.author);
     if (transform === undefined) return;
+    targetElement.style.transform = transform.transformString;
 
     // const parentElement = targetElement.parentElement;
     // parentElement.style.transformStyle = "preserve-3d";
-    // parentElement.style.perspective = transform.perspective + "px";
-    targetElement.style.transform = transform.transformString;
+    // parentElement.style.perspective = "600px";
   }
 };
 </script>
