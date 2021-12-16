@@ -6,10 +6,12 @@
       <h2>{{this.$route.query.creator}}</h2>
     </section>
     <section class="video">
-      <iframe id="youtube" :width="this.$route.query.width" :height="this.$route.query.height" :src="`https://www.youtube.com/embed/${this.$route.query.id}?autoplay=1&showinfo=0&rel=0&iv_load_policy=3&theme=light&color=white`" title="YouTube video player"
+      <iframe class="youtube" :width="this.$route.query.width" :height="this.$route.query.height" :src="`https://www.youtube.com/embed/${this.$route.query.id1}?autoplay=1&showinfo=0&rel=0&iv_load_policy=3&theme=light&color=white`" title="YouTube video player"
           frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen></iframe>
-
+      <iframe class="youtube" :width="this.$route.query.width" :height="this.$route.query.height" :src="`https://www.youtube.com/embed/${this.$route.query.id2}?autoplay=1&showinfo=0&rel=0&iv_load_policy=3&theme=light&color=white`" title="YouTube video player"
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
     </section>
     <section class="control">
       <button @click="close">閉じる</button>
@@ -20,7 +22,7 @@
 
 <script>
 export default {
-  name: "YoutubeViewer",
+  name: "YoutubeViewer2",
   methods: {
     close() {
       window.close();
@@ -57,15 +59,19 @@ h1,h2 {
 
 .video {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 70vw;
-  height: 39.375vw;
+  width: 100%;
+
+flex-wrap: wrap;
 }
 
-#youtube {
-  width: 70vw;
-  height: 39.375vw;
+.youtube {
+  width: 35vw;
+  height: 19.65786vw;
+  min-height: 300px;
+  min-width: 500px;
+  margin: 50px;
 }
 
 .control {
