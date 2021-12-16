@@ -21,7 +21,7 @@ export default {
   top: 50%;
   transform: translateY(-50%);
   background: rgba(255,255,255); /* 明日調整 */
-  width: 12%; /* 明日調整 */
+  width: 12.5%; /* 明日調整 */
   /* height: 56.25vw; */
   height: 100%;
   z-index: 20;
