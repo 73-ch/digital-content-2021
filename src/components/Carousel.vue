@@ -102,7 +102,7 @@ export default {
   margin: auto 0;
   width: 100%;
   height: 100%;
-  background: black;
+  background: white;
   overflow: hidden;
 
   .exhibition {
