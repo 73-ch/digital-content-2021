@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0"></iframe>
+    <iframe id="broadcast" src="https://www.youtube.com/embed/5qap5aO4i9A?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0"></iframe>
     <div class="virtual-screen">
       <dummy id="dummy"/>
     </div>
@@ -34,10 +34,10 @@ export default {
     setVirtualScreen() {
       const targetElement = document.getElementById("dummy");
       targetElement.style.opacity = this.debugMode ? 0.7 : 0.0;
-      const parentElement = targetElement.parentElement;
-      parentElement.style.transformStyle = "preserve-3d";
-      parentElement.style.perspective = this.transform.perspective + "px";
-      parentElement.style.transformStyle = "flat";
+      // const parentElement = targetElement.parentElement;
+      // parentElement.style.transformStyle = "preserve-3d";
+      // parentElement.style.perspective = this.transform.perspective + "px";
+      // parentElement.style.transformStyle = "flat";
       targetElement.style.transform = this.transform.transformString;
     }
   },
@@ -66,13 +66,12 @@ iframe {
   height: 100vh;
 }
 .virtual-screen {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 177.777vh;
-  max-width: 100vw;
   min-height: 56.25vw;
-  max-height: 100vh;
   width: 100vw;
   height: 100vh;
 }

@@ -1,63 +1,143 @@
 [
   {
     "youtubeId": "a_2Qwgc4SkA",
-    "authorList": [
-      "s1911441",
-      "s1911442"
+    "workList": [
+      {
+        "author": "nowatari",
+        "url": ""
+      },
+      {
+        "author": "hirato",
+        "url": "https://script.google.com/macros/s/AKfycbxSY7BAeUve2cQ4tpIwt3GY_mHmy_YcKeUWN9uuuV9I7PCpJoyQxwq2rkLND8ejneh7/exec"
+      }
     ]
   },
   {
     "youtubeId": "PuSaT5OHJMo",
-    "authorList": [
-      "s1911439",
-      "s1911440"
+    "workList": [
+      {
+        "author": "torii",
+        "url": ""
+      },
+      {
+        "author": "tosa",
+        "url": ""
+      }
     ]
   },
   {
     "youtubeId": "3B2uRjueiMM",
-    "authorList": [
-      "s1911443",
-      "s1911444"
+    "workList": [
+      {
+        "author": "sakurai",
+        "url": ""
+      },
+      {
+        "author": "tunoda",
+        "url": "https://2ndr9.github.io/a/"
+      }
     ]
   },
   {
     "youtubeId": "VHhboKkwf4A",
-    "authorList": [
+    "workList": [
+      {
+        "author": "nagaisi",
+        "url": "https://another-room.netlify.app/"
+      },
+      {
+        "author": "utida",
+        "url": ""
+      }
     ]
   },
   {
     "youtubeId": "h9qnOlGrrNA",
-    "authorList": [
+    "workList": [
+      {
+        "author": "nisimura",
+        "url": "https://hotoke-to-watashi.netlify.app/"
+      },
+      {
+        "author": "konisi",
+        "url": "https://a-second.herokuapp.com/"
+      }
     ]
   },
   {
     "youtubeId": "u8osACSCd_Q",
-    "authorList": [
+    "workList": [
+      {
+        "author": "umetu",
+        "url": "https://www.u.tsukuba.ac.jp/~s1911397/shishiodoshi.html"
+      },
+      {
+        "author": "kitaoka",
+        "url": "https://kitaokan.github.io/"
+      }
     ]
   },
   {
     "youtubeId": "eKpqeoZNHe8",
-    "authorList": [
+    "workList": [
+      {
+        "author": "inose",
+        "url": "https://www.youtube.com/watch?v=T9cqxe_TxQc"
+      }
     ]
   },
   {
     "youtubeId": "6uGRz4yZQac",
-    "authorList": [
+    "workList": [
+      {
+        "author": "namikawa",
+        "url": "https://scrolling.73ch.work/"
+      },
+      {
+        "author": "okamura",
+        "url": ""
+      }
     ]
   },
   {
     "youtubeId": "WC1C1sefilQ",
-    "authorList": [
+    "workList": [
+      {
+        "author": "yamaura",
+        "url": "https://mauer.kzkymur.com/"
+      },
+      {
+        "author": "hukunaga",
+        "url": ""
+      }
     ]
   },
   {
     "youtubeId": "YFvQ_Q9xsGI",
-    "authorList": [
+    "workList": [
+      {
+        "author": "suzuki",
+        "url": "https://youtu.be/YZdjpaFXWbw",
+        "_comment": "YouTube埋め込み"
+      },
+      {
+        "author": "nagakura",
+        "url": ""
+      }
     ]
   },
   {
     "youtubeId": "bdwo8Gvwflk",
-    "authorList": [
+    "workList": [
+      {
+        "author": "haga",
+        "url": "https://youtu.be/1Dpt9TyfYPE",
+        "_comment": "YouTube埋め込み"
+      },
+      {
+        "author": "yokoyama",
+        "url": ""
+      }
     ]
   }
 ]
