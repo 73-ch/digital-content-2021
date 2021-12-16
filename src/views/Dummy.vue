@@ -35,7 +35,7 @@ export default {
   font-weight: bold;
   width: 1920px;
   height: 1009px;
-  padding: 1.6rem;
+  padding: 25.6px;
   background-repeat: repeat;
   background-size: cover;
   background-color: #777;
