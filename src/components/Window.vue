@@ -63,9 +63,9 @@ export default {
     if (transform === undefined) return;
     targetElement.style.transform = transform.transformString;
 
-    // const parentElement = targetElement.parentElement;
-    // parentElement.style.transformStyle = "preserve-3d";
-    // parentElement.style.perspective = "600px";
+    const parentElement = targetElement.parentElement;
+    parentElement.style.transformStyle = "preserve-3d";
+    parentElement.style.perspective = "600px";
   }
 };
 </script>
