@@ -3,15 +3,15 @@
     <Carousel v-model:propIndex="index" :config="config" />
     <Calibration v-if="isDebugMode">
       <ul class="idList">
-        <li v-for="id in config[index].authorList" :key="id">
-          {{ id }}
+        <li v-for="work in config[index].workList" :key="work.author">
+          {{ work.author }}
         </li>
       </ul>
     </Calibration>
     <Window
-      v-for="id in config[index].authorList"
-      :key="id"
-      :id="id" />
+      v-for="work in config[index].workList"
+      :key="work.author"
+      :id="work.author" />
   </div>
 </template>
 
