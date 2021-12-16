@@ -33,7 +33,7 @@ export default {
   font-weight: normal;
   width: 100vw;
   min-height: 100vh;
-  padding: 1.6rem;
+  padding: 25.6px;
   background-repeat: repeat;
   background-size: cover;
   background-color: #777;
@@ -44,10 +44,10 @@ export default {
       padding-bottom: 2px;
     }
     &__sentence {
-      margin-top: 1.6rem;
+      margin-top: 25.6px;
       font-size: 16px;
       color: $color__default;
-      line-height: 2.45rem;
+      line-height: 39.2px;
     }
   }
 }

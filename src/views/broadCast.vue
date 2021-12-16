@@ -55,6 +55,6 @@ export default {
 
 <style>
 body {
-  background: black;
+  background: white;
 }
 </style>
