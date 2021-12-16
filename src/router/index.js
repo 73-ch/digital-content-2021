@@ -6,6 +6,7 @@ import Concept from '@/views/Concept.vue'
 import Credit from '@/views/Credit.vue'
 import YoutubeViewer from "@/views/YoutubeViewer";
 import YoutubeViewer2 from "@/views/YoutubeViewer2";
+import AccessDeny from '@/views/AccessDeny';
 
 const routes = [
   {
@@ -42,6 +43,11 @@ const routes = [
     path: '/viewer2',
     name: 'Viewer2',
     component: YoutubeViewer2,
+  },
+  {
+    path: '/accessDeny',
+    name: 'accessDeny',
+    component: AccessDeny,
   },
   {
     // それ以外はホーム画面に遷移
