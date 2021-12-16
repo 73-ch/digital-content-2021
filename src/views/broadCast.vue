@@ -1,5 +1,9 @@
 <template>
   <div class='broad-cast'>
+    <Window
+      v-for="work in config[index].workList"
+      :key="work.author"
+      :work="work" />
     <Carousel v-model:propIndex="index" :config="config" />
     <Calibration v-if="isDebugMode">
       <ul class="idList">
@@ -8,10 +12,6 @@
         </li>
       </ul>
     </Calibration>
-    <Window
-      v-for="work in config[index].workList"
-      :key="work.author"
-      :id="work.author" />
   </div>
 </template>
 

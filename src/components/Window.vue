@@ -1,5 +1,10 @@
 <template>
-  <div :id="id" :style="{ background: color }" class="window">
+  <div
+    :id="work.author"
+    :style="{ background: color }"
+    class="window"
+    v-on:click="jumpToWorkLink"
+  >
   </div>
 </template>
 
@@ -19,6 +24,10 @@ function getTransformJson(id) {
 
 export default {
   props: {
+    work: {
+      author: String,
+      url: String,
+    },
     id: String,
   },
   data() {
@@ -28,11 +37,16 @@ export default {
       debugMode: process.env.NODE_ENV === "development",
     };
   },
+  methods: {
+    jumpToWorkLink() {
+      window.open(this.work.url);
+    },
+  },
   mounted() {
-    const targetElement = document.getElementById(this.id);
+    const targetElement = document.getElementById(this.work.author);
     targetElement.style.opacity = process.env.NODE_ENV === "development" ? 0.7 : 0;
 
-    const transform = getTransformJson(this.id);
+    const transform = getTransformJson(this.work.author);
     if (transform === undefined) return;
 
     // const parentElement = targetElement.parentElement;
@@ -45,6 +59,7 @@ export default {
 
 <style scoped lang="scss">
 .window {
+  z-index: 2;
   position: absolute;
   width: 192px;
   height: 108px;
