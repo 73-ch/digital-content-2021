@@ -2,8 +2,10 @@
   <div
     :id="work.author"
     :style="{ background: color }"
-    class="window"
+    :class="`window ${!debugMode ? 'production' : ''}`"
     v-on:click="jumpToWorkLink"
+    v-on:mouseover="fadeIn"
+    v-on:mouseleave="fadeOut"
   >
   </div>
 </template>
@@ -31,16 +33,27 @@ export default {
     id: String,
   },
   data() {
+    const debugMode = process.env.NODE_ENV === "development";
     return {
-      color: getColor(),
+      color: debugMode ? getColor() : '#fff',
       parentElement: null,
-      debugMode: process.env.NODE_ENV === "development",
+      debugMode,
     };
   },
   methods: {
     jumpToWorkLink() {
       window.open(this.work.url);
     },
+    fadeIn() {
+      if (this.debugMode) return;
+      const targetElement = document.getElementById(this.work.author);
+      targetElement.style.opacity = 0.4;
+    },
+    fadeOut() {
+      if (this.debugMode) return;
+      const targetElement = document.getElementById(this.work.author);
+      targetElement.style.opacity = 0;
+    }
   },
   mounted() {
     const targetElement = document.getElementById(this.work.author);
@@ -63,5 +76,12 @@ export default {
   position: absolute;
   width: 192px;
   height: 108px;
+
+  &.production {
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    z-index: 10;
+  }
 }
 </style>

@@ -111,6 +111,7 @@ export default {
     height: 100%;
     opacity: 0;
     z-index: 0;
+    pointer-events: none;
     &.visible {
       opacity: 1;
       z-index: 1;
