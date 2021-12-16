@@ -32,19 +32,32 @@ export default {
     }
   },
   methods: {
-    setVirtualScreen() {
+    setDummy() {
       const targetElement = document.getElementById("dummy");
       targetElement.style.opacity = this.debugMode ? 0.7 : 0.1;
       const parentElement = targetElement.parentElement;
       parentElement.style.transformStyle = "preserve-3d";
-      parentElement.style.perspective = this.transform.perspective + "px";
+      parentElement.style.perspective = "600px";
       parentElement.style.transformStyle = "flat";
+
+      console.log(this.transform);
       targetElement.style.transform = this.transform.transformString;
+    },
+    setVirtualScreen() {
+      let ratio;
+      if (window.innerWidth / 16 * 9 > window.innerHeight) {
+        ratio = window.innerWidth / 1600;
+      } else {
+        ratio = window.innerHeight / 900;
+      }
+      const virtualScreen = document.getElementsByClassName("virtual-screen")[0];
+      virtualScreen.style.transform = `translate(-50%, -50%) scale(${ratio})`;
     }
   },
   mounted() {
-    this.setVirtualScreen()
-    // window.addEventListener('resize', this.setVirtualScreen)
+    this.setDummy();
+    this.setVirtualScreen();
+    window.addEventListener('resize', this.setVirtualScreen);
   }
 }
 </script>
@@ -74,9 +87,5 @@ iframe {
   left: 50%;
   transform-origin: center;
   transform: translate(-50%, -50%);
-  min-width: 177.777vh;
-  min-height: 56.25vw;
-  width: 100vw;
-  height: 100vh;
 }
 </style>
