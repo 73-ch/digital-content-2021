@@ -2,20 +2,23 @@
   <div class="modal">
     <div class="modal-board">
       <div class="modal-board__message">
-        ネットワーク速度が速い環境でご視聴ください。
-        また、この四角が全て見えている状態になるまで、ブラウザのウィンドウを拡大してください。
+        <p>
+          ネットワーク速度が速い環境でご視聴ください。</p>
+        <p>
+          また、この四角が全て見えている状態になるまで、ブラウザのウィンドウを拡大してください。 </p>
       </div>
       <div class="modal-board__button">
         <button v-if="isButtonClickable" @click="$emit('closeModal')">OK</button>
         <button v-else @click="$emit('closeModal')" disabled>OK</button>
       </div>
     </div>
-    <div class="modal-background" />
+    <div class="modal-background"/>
   </div>
 </template>
 
 <script>
-import { computed } from 'vue'
+import {computed} from 'vue'
+
 export default {
   props: {
     isButtonClickable: {
@@ -24,7 +27,7 @@ export default {
     }
   },
   setup(props) {
-    const pointerEvents = computed(() => props.isButtonClickable ? 'auto' : 'none' )
+    const pointerEvents = computed(() => props.isButtonClickable ? 'auto' : 'none')
 
     return { pointerEvents }
   }
@@ -39,6 +42,7 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 5000;
+
   &-board {
     position: fixed;
     top: 50%;
@@ -51,12 +55,16 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     &__message {
-      width: 80%;
+      width: 70%;
       font-size: 32px;
+      text-align: center;
     }
+
     &__button {
       margin-top: 32px;
+
       button {
         cursor: pointer;
         font-size: 18px;
@@ -67,6 +75,7 @@ export default {
       }
     }
   }
+
   &-background {
     width: 100%;
     height: 100%;
