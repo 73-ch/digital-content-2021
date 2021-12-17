@@ -78,9 +78,10 @@ export default {
   height: 108px;
   top: 50%;
   left: 50%;
+  opacity: 0;
 
   &.production {
-    transition: all 0.3s;
+    transition: opacity 0.3s;
     cursor: pointer;
     background: white;
     z-index: 10;
