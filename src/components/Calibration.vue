@@ -355,7 +355,7 @@ export default {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;

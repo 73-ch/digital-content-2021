@@ -76,6 +76,8 @@ export default {
   position: absolute;
   width: 192px;
   height: 108px;
+  top: 50%;
+  left: 50%;
   opacity: 0;
 
   &.production {
