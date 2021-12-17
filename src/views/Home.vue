@@ -7,23 +7,52 @@
     </div>
   </div>
   <calibration v-if="debugMode"/>
+  <modal 
+    v-if="isModalOpen"
+    :isButtonClickable="isWindowLargeEnough"
+    @closeModal="closeModal"
+  />
 </template>
 
 <script>
-import {computed} from 'vue'
+import {ref, computed} from 'vue'
 import Dummy from "@/views/Dummy"
 import transformJSON from '@/assets/calibration-data/dummy.json'
 import Calibration from '@/components/Calibration.vue'
+import Modal from '@/components/Modal.vue'
 
 export default {
   components: {
     Dummy,
-    Calibration
+    Calibration,
+    Modal
   },
   setup() {
+    const isModalOpen = ref(false)
+    const isWindowLargeEnough = ref(true)
     const bgImage = computed(() => require("@/assets/images/background.png"))
 
-    return {bgImage}
+    const closeModal = () => {
+      isModalOpen.value = false
+    }
+
+    const resizeWindow = () => {
+      // ウィンドウサイズがモーダルより大きいか
+      // modal width: 1440, modal height: 810
+      isWindowLargeEnough.value = window.innerWidth > 1440 && window.innerHeight > 810
+      
+      // ウィンドウサイズがモーダルサイズより小さいと、モーダルを出す
+      if (window.innerWidth <= 1440 && window.innerHeight <= 810) {
+        isModalOpen.value = true
+      }
+    }
+    window.addEventListener('resize', resizeWindow)
+    resizeWindow() // initial call
+
+    // 一番最初にモーダルを出す
+    isModalOpen.value = true
+
+    return { isModalOpen, isWindowLargeEnough, bgImage, closeModal }
   },
   data() {
     return {
