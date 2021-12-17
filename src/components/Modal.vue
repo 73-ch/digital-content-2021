@@ -6,6 +6,8 @@
           ネットワーク速度が速い環境でご視聴ください。</p>
         <p>
           また、この四角が全て見えている状態になるまで、ブラウザのウィンドウを拡大してください。 </p>
+        <p v-if="isOpen" style="color: greenyellow">営業中</p>
+        <p v-else style="color: orangered">営業時間外(OPEN: 10:00~20:00)</p>
       </div>
       <div class="modal-board__button">
         <button v-if="isButtonClickable" @click="$emit('closeModal')">OK</button>
@@ -29,7 +31,13 @@ export default {
   setup(props) {
     const pointerEvents = computed(() => props.isButtonClickable ? 'auto' : 'none')
 
-    return { pointerEvents }
+    return {pointerEvents}
+  },
+  computed: {
+    isOpen() {
+      const now = new Date().getUTCHours();
+      return now >= 1 && now < 11;
+    }
   }
 }
 </script>
