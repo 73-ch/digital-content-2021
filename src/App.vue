@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow: hidden;
+}
+
 #app {
   color: $color__default;
   font-family: $font-family__default;

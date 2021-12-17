@@ -1,5 +1,5 @@
 <template>
-  <div class='broad-cast' :style="{ overflow: isDebugMode ? 'visible' : 'hidden' }">
+  <div class='broad-cast'>
     <Window
       v-for="work in config[index].workList"
       :key="work.author"
@@ -30,6 +30,22 @@ export default {
       isDebugMode: process.env.NODE_ENV === "development",
     };
   },
+  methods: {
+    setParent() {
+      let ratio;
+      if (window.innerWidth / 16 * 9 > window.innerHeight) {
+        ratio = window.innerWidth / 1600;
+      } else {
+        ratio = window.innerHeight / 900;
+      }
+      const parent = document.getElementsByClassName("broad-cast")[0];
+      parent.style.transform = `translate(-50%, -50%) scale(${ratio * 0.8})`;
+    }
+  },
+  mounted() {
+    this.setParent();
+    window.addEventListener('resize', this.setParent);
+  }
 };
 </script>
 
@@ -42,11 +58,8 @@ export default {
 
 .broad-cast {
   position: absolute;
-  /* width: 100vw; */
-  /* height: 100vh; */
-  width: 1280px;
-  height: 720px;
-  overflow: hidden;
+  width: 1600px;
+  height: 900px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

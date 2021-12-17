@@ -76,6 +76,8 @@ export default {
   position: absolute;
   width: 192px;
   height: 108px;
+  top: 50%;
+  left: 50%;
 
   &.production {
     transition: all 0.3s;
