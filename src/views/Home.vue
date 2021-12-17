@@ -64,12 +64,6 @@ export default {
     setDummy() {
       const targetElement = document.getElementById("dummy");
       targetElement.style.opacity = this.debugMode ? 0.7 : 0.0;
-      const parentElement = targetElement.parentElement;
-      parentElement.style.transformStyle = "preserve-3d";
-      parentElement.style.perspective = "600px";
-      parentElement.style.transformStyle = "flat";
-
-      console.log(this.transform);
       targetElement.style.transform = this.transform.transformString;
     },
     setVirtualScreen() {

@@ -50,22 +50,6 @@
           v-model="translateY"
         />
       </div>
-      <div id="translate_z" class="param">
-        <div>
-          <label for="translate_z">Translate Z: </label>
-          <span id="val_translate_z">{{ translateZ }}</span
-          ><span>px</span>
-          <span><input type="text" v-model="setTranslateZ" class="set_param"/></span>
-        </div>
-        <input
-          type="range"
-          id="range_translate_z"
-          min="-500"
-          max="500"
-          step="1"
-          v-model="translateZ"
-        />
-      </div>
       <div id="rotate_x" class="param">
         <div>
           <label for="rotate_x">Rotate X: </label>
@@ -124,7 +108,7 @@
           type="range"
           id="range_scale_x"
           min="0"
-          max="2"
+          max="10"
           step="0.001"
           v-model="scaleX"
         />
@@ -139,7 +123,7 @@
           type="range"
           id="range_scale_y"
           min="0"
-          max="2"
+          max="10"
           step="0.001"
           v-model="scaleY"
         />
@@ -164,7 +148,6 @@ export default {
     return {
       targetId: "",
       targetElement: null,
-      parentElement: null,
       params: {},
       translateX: 0,
       translateY: 0,
@@ -180,16 +163,11 @@ export default {
   computed: {
     computedTransform() {
       let transformString = '';
-      if (this.targetId === 'dummy') {
-        transformString += `translate(${this.translateX}px, ${this.translateY}px) `;
-        transformString += `scale3d(${this.scaleX}, ${this.scaleX}, 1 ) `;
-      } else {
-        transformString += `translate3d(${this.translateX}px, ${this.translateY}px, ${this.translateZ}px) `;
-        transformString += `rotate3d(1, 0, 0,${this.rotateX}deg) `;
-        transformString += `rotate3d(0, 1, 0,${this.rotateY}deg) `;
-        transformString += `rotate3d(0, 0, 1,${this.rotateZ}deg) `;
-        transformString += `scale3d(${this.scaleX}, ${this.scaleY}, 1 ) `;
-      }
+      transformString += `translate3d(${this.translateX}px, ${this.translateY}px, ${this.translateZ}px) `;
+      transformString += `rotate3d(1, 0, 0,${this.rotateX}deg) `;
+      transformString += `rotate3d(0, 1, 0,${this.rotateY}deg) `;
+      transformString += `rotate3d(0, 0, 1,${this.rotateZ}deg) `;
+      transformString += `scale3d(${this.scaleX}, ${this.scaleY}, 1 ) `;
       return transformString;
     },
     setTranslateX: {
@@ -291,9 +269,6 @@ export default {
       targetElement.style.opacity = "0.8";
 
       this.targetElement = targetElement;
-      this.parentElement = targetElement.parentElement;
-      this.parentElement.style.transformStyle = "preserve-3d";
-      this.parentElement.style.perspective = "600px";
 
       // ターゲットのvisibilityを扱うためのエレメント
       let view = document.getElementById("checkbox_view");
