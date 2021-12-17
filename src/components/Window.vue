@@ -36,7 +36,6 @@ export default {
     const debugMode = process.env.NODE_ENV === "development";
     return {
       color: debugMode ? getColor() : '#fff',
-      parentElement: null,
       debugMode,
     };
   },
@@ -62,10 +61,6 @@ export default {
     const transform = getTransformJson(this.work.author);
     if (transform === undefined) return;
     targetElement.style.transform = transform.transformString;
-
-    const parentElement = targetElement.parentElement;
-    parentElement.style.transformStyle = "preserve-3d";
-    parentElement.style.perspective = "600px";
   }
 };
 </script>
