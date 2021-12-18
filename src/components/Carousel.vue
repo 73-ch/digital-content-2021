@@ -84,7 +84,7 @@ export default {
     if (process.env.NODE_ENV !== "development") return;
     document.addEventListener('keydown', (event) => {
       const keyName = event.key;
-      if (keyName === "+") {
+      if (keyName === "=") {
         this.increment();
       } else if (keyName === "-") {
         this.decrement();
