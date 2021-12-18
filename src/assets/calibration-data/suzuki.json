@@ -1,11 +1,11 @@
 {
-    "transformString": "translate3d(595.2px, 325.6px, 500px) rotate3d(1, 0, 0,55.3deg) rotate3d(0, 1, 0,0deg) rotate3d(0, 0, 1,0deg) scale3d(0.532, 0.727, 1 )",
-    "translateX": "595.2",
-    "translateY": "325.6",
-    "translateZ": "500",
-    "rotateX": "55.3",
-    "rotateY": "0",
+    "transformString": "translate3d(250px, 88px, 33px) rotate3d(1, 0, 0,45deg) rotate3d(0, 1, 0,1.2deg) rotate3d(0, 0, 1,0deg) scale3d(3.5, 4.25, 1 ) ",
+    "translateX": "250",
+    "translateY": "88",
+    "translateZ": "33",
+    "rotateX": "45",
+    "rotateY": "1.2",
     "rotateZ": 0,
-    "scaleX": "0.532",
-    "scaleY": "0.727"
+    "scaleX": "3.5",
+    "scaleY": "4.25"
 }
