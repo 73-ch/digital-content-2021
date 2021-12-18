@@ -266,7 +266,7 @@ export default {
   methods: {
     calibration() {
 
-      let transformJson = getTransformJson(this.id);
+      let transformJson = getTransformJson(this.targetId);
 
       if (transformJson) {
         this.translateX = transformJson.translateX;
