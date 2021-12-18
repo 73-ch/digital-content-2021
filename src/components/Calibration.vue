@@ -151,7 +151,6 @@ export default {
       params: {},
       translateX: 0,
       translateY: 0,
-      translateZ: 0,
       rotateX: 0,
       rotateY: 0,
       rotateZ: 0,
@@ -163,7 +162,7 @@ export default {
   computed: {
     computedTransform() {
       let transformString = '';
-      transformString += `translate3d(${this.translateX}px, ${this.translateY}px, ${this.translateZ}px) `;
+      transformString += `translate(${this.translateX}px, ${this.translateY}px) `;
       transformString += `rotate3d(1, 0, 0,${this.rotateX}deg) `;
       transformString += `rotate3d(0, 1, 0,${this.rotateY}deg) `;
       transformString += `rotate3d(0, 0, 1,${this.rotateZ}deg) `;
@@ -184,14 +183,6 @@ export default {
       },
       set(value) {
         this.translateY = value
-      }
-    },
-    setTranslateZ: {
-      get() {
-        return this.translateZ
-      },
-      set(value) {
-        this.translateZ = value
       }
     },
     setRotateX: {
@@ -249,7 +240,6 @@ export default {
       if (transformJson) {
         this.translateX = transformJson.translateX;
         this.translateY = transformJson.translateY;
-        this.translateZ = transformJson.translateZ;
         this.rotateX = transformJson.rotateX;
         this.rotateY = transformJson.rotateY;
         this.rotateZ = transformJson.rotateZ;
@@ -301,7 +291,6 @@ export default {
         transformString: this.computedTransform,
         translateX: this.translateX,
         translateY: this.translateY,
-        translateZ: this.translateZ,
         rotateX: this.rotateX,
         rotateY: this.rotateY,
         rotateZ: this.rotateZ,
