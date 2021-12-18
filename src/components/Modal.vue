@@ -53,14 +53,14 @@ export default {
     align-items: center;
     &__message {
       width: 80%;
-      font-size: 32px;
+      font-size: 24px;
     }
     &__button {
       margin-top: 32px;
       button {
         cursor: pointer;
-        font-size: 18px;
-        padding: 16px 48px;
+        font-size: 16px;
+        padding: 15px 42px;
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
