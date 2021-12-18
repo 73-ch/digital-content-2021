@@ -84,9 +84,9 @@ export default {
     if (process.env.NODE_ENV !== "development") return;
     document.addEventListener('keydown', (event) => {
       const keyName = event.key;
-      if (keyName === "ArrowRight") {
+      if (keyName === "+") {
         this.increment();
-      } else if (keyName === "ArrowLeft") {
+      } else if (keyName === "-") {
         this.decrement();
       }
     });
