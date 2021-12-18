@@ -45,7 +45,7 @@ export default {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 1440px;
-    height: 810px;
+    height: 780px;
     background-color: #cccccc;
     display: flex;
     flex-direction: column;
