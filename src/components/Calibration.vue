@@ -17,7 +17,7 @@
           style="margin-left: 10px"
         />
       </div>
-      <p class="param">{{ computedTransform }}</p>
+<!--      <p class="param">{{ computedTransform }}</p>-->
       <div id="translate_x" class="param">
         <div>
           <label for="translate_x">Translate X: </label>
@@ -235,7 +235,7 @@ export default {
   methods: {
     calibration() {
 
-      let transformJson = getTransformJson(this.id);
+      let transformJson = getTransformJson(this.targetId);
 
       if (transformJson) {
         this.translateX = transformJson.translateX;
@@ -334,7 +334,7 @@ export default {
   padding: 2% 2%;
   width: 400px;
   position: fixed;
-  top: 80px;
+  top: -80px;
   right: 0;
 
   background-color: rgba(20, 20, 20, 0.1);
@@ -346,7 +346,7 @@ export default {
   visibility: hidden;
 }
 .set_param {
-  float: right; 
+  float: right;
   width: 50px;
 }
 #name {
