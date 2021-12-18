@@ -7,7 +7,7 @@
     </div>
   </div>
   <calibration v-if="debugMode"/>
-  <modal 
+  <modal
     v-if="isModalOpen"
     :isButtonClickable="isWindowLargeEnough"
     @closeModal="closeModal"
@@ -39,10 +39,10 @@ export default {
     const resizeWindow = () => {
       // ウィンドウサイズがモーダルより大きいか
       // modal width: 1280, modal height: 800
-      isWindowLargeEnough.value = window.innerWidth > 1280 && window.innerHeight > 800
-      
+      isWindowLargeEnough.value = window.innerWidth > 1280 && window.innerHeight > 720
+
       // ウィンドウサイズがモーダルサイズより小さいと、モーダルを出す
-      if (window.innerWidth <= 1280 && window.innerHeight <= 800) {
+      if (window.innerWidth <= 1280 && window.innerHeight <= 720) {
         isModalOpen.value = true
       }
     }
