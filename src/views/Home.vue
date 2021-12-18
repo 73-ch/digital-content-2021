@@ -38,11 +38,11 @@ export default {
 
     const resizeWindow = () => {
       // ウィンドウサイズがモーダルより大きいか
-      // modal width: 1440, modal height: 810
-      isWindowLargeEnough.value = window.innerWidth > 1440 && window.innerHeight > 810
+      // modal width: 1280, modal height: 800
+      isWindowLargeEnough.value = window.innerWidth > 1280 && window.innerHeight > 800
       
       // ウィンドウサイズがモーダルサイズより小さいと、モーダルを出す
-      if (window.innerWidth <= 1440 && window.innerHeight <= 810) {
+      if (window.innerWidth <= 1280 && window.innerHeight <= 800) {
         isModalOpen.value = true
       }
     }
