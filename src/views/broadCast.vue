@@ -52,7 +52,7 @@ export default {
 <style scoped lang="scss">
 .idList {
   position: relative;
-  color: white;
+  color: black;
   list-style-position: inline;
 }
 
