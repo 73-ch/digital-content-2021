@@ -38,14 +38,14 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 5000;
+  z-index: 110;
   &-board {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 1280px;
-    height: 800px;
+    width: 800px;
+    height: 450px;
     background-color: #cccccc;
     display: flex;
     flex-direction: column;
