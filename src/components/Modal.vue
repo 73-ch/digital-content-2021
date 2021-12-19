@@ -4,8 +4,8 @@
       <div class="modal-board__message">
         <p>ネットワーク速度が速い環境でご視聴ください。</p>
         <p>また、この四角が全て見えている状態になるまで、ブラウザのウィンドウを拡大してください。</p>
-        <p v-if="isOpen" style="color: limegreen">営業中</p>
-        <p v-else style="color: orangered">営業時間外(OPEN: 10:00~20:00)</p>
+        <p v-if="isOpen" style="color: limegreen">開館中</p>
+        <p v-else style="color: orangered">閉館中(OPEN: 10:00~20:00)</p>
       </div>
       <div class="modal-board__button">
         <button v-if="isButtonClickable" @click="$emit('closeModal')">{{ isOpen ? "鑑賞する" : "覗く" }}</button>
