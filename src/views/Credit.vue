@@ -10,7 +10,7 @@
             Producer
           </div>
           <div class="credit-list__item-name">
-            浪川洪作
+            <a href="https://73ch.work" class="credit-list__item-name-link">浪川洪作</a>
           </div>
         </div>
         <div class="credit-list__item">
@@ -26,7 +26,7 @@
             Web
           </div>
           <div class="credit-list__item-name">
-            西村純, 内田大智, 山浦一輝, 角田陸
+            西村純, <a href="https://ta1uchida.com/" class="credit-list__item-name-link">内田大智</a>, 山浦一輝, 角田陸
           </div>
         </div>
         <div class="credit-list__item">
@@ -58,7 +58,7 @@
             Teacher
           </div>
           <div class="credit-list__item-name">
-            落合陽一
+            <a href="https://yoichiochiai.com/" class="credit-list__item-name-link">落合陽一</a>
           </div>
         </div>
         <div class="credit-list__item">
@@ -115,6 +115,10 @@ export default {
       &-name {
         text-align: left;
         margin-left: 9.6px;
+
+        &-link {
+          color: white;
+        }
       }
     }
   }
