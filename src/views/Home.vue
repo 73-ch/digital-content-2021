@@ -42,7 +42,7 @@ export default {
       isWindowLargeEnough.value = window.innerWidth > 1100 && window.innerHeight > 600
 
       // ウィンドウサイズがモーダルサイズより小さいと、モーダルを出す
-      if (window.innerWidth <= 1280 && window.innerHeight <= 720) {
+      if (window.innerWidth <= 1100 && window.innerHeight <= 600) {
         isModalOpen.value = true
       }
     }
