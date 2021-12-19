@@ -139,5 +139,19 @@
         "url": "./viewer?width=560&height=315&id=-qzVykN8Qj4&title=%28humane%29&creator=%E6%A8%AA%E5%B1%B1%E6%8B%93%E5%B7%B3&number=K-2"
       }
     ]
+  },
+  {
+    "youtubeId": "u1xIC5apyLA",
+    "workList": [
+      {
+        "author": "sns",
+        "url": "https://twitter.com/intent/tweet?text=%0Ahttps%3A%2F%2Fdigicon.mast.tsukuba.ac.jp%2F",
+        "_comment": "YouTube埋め込み"
+      },
+      {
+        "author": "form",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSfAf63S9Tfwt8MJxgn2kwkxFiuwqriOb3J60Djmsnoher4yGw/viewform?usp=sf_link"
+      }
+    ]
   }
 ]
