@@ -2,12 +2,14 @@
   <div class="modal">
     <div class="modal-board">
       <div class="modal-board__message">
-        ネットワーク速度が速い環境でご視聴ください。
-        また、この四角が全て見えている状態になるまで、ブラウザのウィンドウを拡大してください。
+        <p>ネットワーク速度が速い環境でご視聴ください。</p>
+        <p>また、この四角が全て見えている状態になるまで、ブラウザのウィンドウを拡大してください。</p>
+        <p v-if="isOpen" style="color: limegreen">営業中</p>
+        <p v-else style="color: orangered">営業時間外(OPEN: 10:00~20:00)</p>
       </div>
       <div class="modal-board__button">
-        <button v-if="isButtonClickable" @click="$emit('closeModal')">OK</button>
-        <button v-else @click="$emit('closeModal')" disabled>OK</button>
+        <button v-if="isButtonClickable" @click="$emit('closeModal')">{{ isOpen ? "鑑賞する" : "覗く" }}</button>
+        <button v-else @click="$emit('closeModal')" disabled>{{ isOpen ? "鑑賞する" : "覗く" }}</button>
       </div>
     </div>
     <div class="modal-background" />
@@ -27,6 +29,12 @@ export default {
     const pointerEvents = computed(() => props.isButtonClickable ? 'auto' : 'none' )
 
     return { pointerEvents }
+  },
+  computed: {
+    isOpen() {
+      const now = new Date().getUTCHours();
+      return now >= 1 && now < 11;
+    }
   }
 }
 </script>
@@ -51,6 +59,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     &__message {
       width: 80%;
       font-size: 32px;
