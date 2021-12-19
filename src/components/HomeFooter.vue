@@ -6,7 +6,7 @@
       </div>
       <div class="home-footer__btns-col">
         <button class="home-footer__btns-label">Producer</button>
-        <button class="home-footer__btns-label">Namikawa Kosaku</button>
+        <button class="link" @click="openPopupWindow('https://73ch.work')">Namikawa Kosaku</button>
       </div>
       <div class="home-footer__btns-col">
         <button class="home-footer__btns-label">Teacher</button>
