@@ -2,6 +2,7 @@
   <div id="home">
     <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1&rel=0&vq=highres" title="YouTube video player" frameborder="0"></iframe>
     <div class="youtube-hide"></div>
+    <img class="hint-image" src="@/assets/images/hint.png" alt="hint image">
     <div class="virtual-screen">
       <dummy id="dummy" />
     </div>
@@ -108,6 +109,33 @@ iframe {
   max-height: 100vh;
   width: 100vw;
   height: 100vh;
+}
+
+.hint-image {
+  position: fixed;
+  z-index: -3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 177.777vh;
+  max-width: 100vw;
+  min-height: 56.25vw;
+  max-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+
+  animation: fadeIn 3.0s ease 1.0s 1 normal;
+  animation-delay: 10.0s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fadeIn { /*animation-nameで設定した値を書く*/
+
+  0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
+  50% {opacity: 0.7} /*アニメーション終了時は不透明度100%*/
+  100% {opacity: 0} /*アニメーション終了時は不透明度100%*/
+
 }
 
 .youtube-hide {
