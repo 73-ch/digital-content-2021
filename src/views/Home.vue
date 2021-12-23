@@ -1,6 +1,7 @@
 <template>
   <div id="home">
-    <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1&rel=0&vq=highres" title="YouTube video player" frameborder="0"></iframe>
+    <img id="broadcast" src="@/assets/images/toppage-background.png" alt="top-page background">
+<!--    <iframe id="broadcast" src="https://www.youtube.com/embed/FjxH9y9wEE0?controls=0&autoplay=1&mute=1&rel=0&vq=highres" title="YouTube video player" frameborder="0"></iframe>-->
     <div class="youtube-hide"></div>
     <img class="hint-image" src="@/assets/images/hint.png" alt="hint image">
     <div class="virtual-screen">
@@ -97,7 +98,7 @@ export default {
   position: fixed;
 }
 
-iframe {
+#broadcast {
   position: fixed;
   z-index: -5;
   top: 50%;
