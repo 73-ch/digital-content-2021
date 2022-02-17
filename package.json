@@ -9,6 +9,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "calib-server": "node caliblation-server/server.js",
+    "caption-pos-server": "node caption-pos-server/server.js",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

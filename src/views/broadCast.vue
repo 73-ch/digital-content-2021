@@ -1,9 +1,15 @@
 <template>
-  <div class='broad-cast'>
-    <Window
-      v-for="work in config[index].workList"
-      :key="work.author"
-      :work="work" />
+  <div class="broad-cast">
+    <div v-if="index !== 0">
+      <Window
+        v-for="work in config[index].workList"
+        :key="work.author"
+        :work="work"
+      />
+    </div>
+    <div v-for="work in config[index].workList" :key="work.author">
+      <Caption :work="work" v-if="work.title" />
+    </div>
     <Carousel v-model:propIndex="index" :config="config" />
     <Calibration v-if="isDebugMode">
       <ul class="idList">
@@ -12,17 +18,26 @@
         </li>
       </ul>
     </Calibration>
+    <CaptionPositionSetter v-if="isDebugMode">
+      <ul class="idList">
+        <li v-for="work in config[index].workList" :key="work.author">
+          {{ work.author }}
+        </li>
+      </ul>
+    </CaptionPositionSetter>
   </div>
 </template>
 
 <script>
 import Carousel from "@/components/Carousel.vue";
 import Calibration from "@/components/Calibration.vue";
+import CaptionPositionSetter from "@/components/CaptionPositionSetter.vue";
 import Window from "@/components/Window.vue";
+import Caption from "@/components/Caption.vue";
 import config from "../config.json";
 
 export default {
-  components: { Carousel, Calibration, Window, },
+  components: { Carousel, Calibration, CaptionPositionSetter, Window, Caption },
   data() {
     return {
       config,
@@ -33,19 +48,19 @@ export default {
   methods: {
     setParent() {
       let ratio;
-      if (window.innerWidth / 16 * 9 > window.innerHeight) {
+      if ((window.innerWidth / 16) * 9 > window.innerHeight) {
         ratio = window.innerWidth / 1600;
       } else {
         ratio = window.innerHeight / 900;
       }
       const parent = document.getElementsByClassName("broad-cast")[0];
       parent.style.transform = `translate(-50%, -50%) scale(${ratio * 0.8})`;
-    }
+    },
   },
   mounted() {
     this.setParent();
-    window.addEventListener('resize', this.setParent);
-  }
+    window.addEventListener("resize", this.setParent);
+  },
 };
 </script>
 
