@@ -1,6 +1,7 @@
 <template>
   <div>
     <Arrow direction="left" v-on:click="decrement" />
+    <Arrow direction="dummy-left" v-if="propIndex === 0" />
     <div class="exhibition-container">
       <Exhibition
         v-for="(id, i) in subIdList"
@@ -82,6 +83,7 @@ export default {
   },
   mounted() {
     if (process.env.NODE_ENV !== "development") return;
+    if (this.propIndex === 0) ;
     document.addEventListener('keydown', (event) => {
       const keyName = event.key;
       if (keyName === ")") {
