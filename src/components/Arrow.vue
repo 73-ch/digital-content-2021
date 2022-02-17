@@ -1,6 +1,6 @@
 <template>
   <div class="container" :class="direction">
-    <ArrowSVG class="arrow" />
+    <ArrowSVG class="arrow" v-if="direction !== 'dummy-left'" />
   </div>
 </template>
 
@@ -11,6 +11,12 @@ export default {
   components: { ArrowSVG, },
   props: {
     direction: String,
+    propIndex: Number, 
+  },
+  mounted() {
+    if (this.direction === 'dummy-left') {
+      document.getElementsByClassName('dummy-left')[0].style.cursor = 'default';
+    }
   }
 };
 </script>
@@ -27,6 +33,11 @@ export default {
   cursor: pointer;
 
   &.left {
+    left: 0;
+    transform: translate(-1%, -50%);
+  }
+
+  &.dummy-left {
     left: 0;
     transform: translate(-1%, -50%);
   }
