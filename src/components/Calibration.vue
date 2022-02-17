@@ -1,7 +1,7 @@
 <template>
   <div id="calibration">
     <div id="targetId_container">
-      <p style="background: black">キャリブレーション</p>
+      <p style="background: black">Calibration</p>
       <input v-model="targetId" placeholder="IDを入力" />
       <button @click="calibration">実行</button>
       <slot/>
@@ -129,6 +129,7 @@
         />
       </div>
       <button @click="exportJson">jsonに書き出す</button>
+      <button @click="close">閉じる</button>
     </div>
   </div>
 </template>
@@ -308,6 +309,9 @@ export default {
 
       alert("送信しました");
     },
+    close() {
+      document.getElementById("params").style.visibility = "hidden";
+    }
   },
 };
 </script>
@@ -315,7 +319,7 @@ export default {
 <style scoped lang="scss">
 #calibration {
   width: 100%;
-  height: 100%;
+  height: 10%;
   position: fixed;
   left: 0;
   top: 0;
@@ -325,16 +329,15 @@ export default {
   font-weight: bold;
 }
 #targetId_container {
-  margin-top: 10px;
   position: fixed;
-  right: 10px;
+  right: 0;
 }
 #params {
   // ここは適当
   padding: 2% 2%;
   width: 400px;
   position: fixed;
-  top: -80px;
+  top: 80px;
   right: 0;
 
   background-color: rgba(20, 20, 20, 0.1);
