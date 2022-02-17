@@ -24,11 +24,11 @@
         </div>
         <div class="home-contents-main__info-lines">
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Host : Media Arts, Science and Technology</div>
-          <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Date : Dec. 16(Thu) - Dec. 20(Mon), 2021</div>
+          <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Date : Feb. 19(Sat) - Feb. 23(Wed), 2022</div>
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Time : 10:00 ~ 20:00</div>
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Price : Free</div>
           <div class="home-contents-main__info-lines__line"><span class="circle">&#9679;</span>Venue : Online</div>
-          <div class="home-contents-main__info-lines__line">※17:00 ~ 21:00 on Dec. 16 / 9:00 ~ 17:00 on Dec. 20</div>
+          <div class="home-contents-main__info-lines__line">※14:00 ~ 20:00 on Feb. 19 / 10:00 ~ 18:00 on Feb. 23</div>
         </div>
       </div>
     </div>
