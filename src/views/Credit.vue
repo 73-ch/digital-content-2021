@@ -69,18 +69,27 @@
             鳥居万椰
           </div>
         </div>
+        <div class="credit-list__item">
+          <div class="credit-list__item-label">
+            再展示
+          </div>
+          <div class="credit-list__item-name">
+            浪川洪作, 猪瀬暖基, 内田大智, 西村純, 小西智樹
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { computed } from 'vue'
+import {computed} from 'vue'
+
 export default {
   setup() {
     const bgImage = computed(() => require("@/assets/images/background.png"))
 
-    return { bgImage }
+    return {bgImage}
   }
 }
 </script>
@@ -95,12 +104,15 @@ export default {
   padding: 25.6px;
   background-repeat: repeat;
   background-size: cover;
+
   .wrapper {
     width: 800px;
   }
+
   &-title {
     font-size: $font-size__title;
   }
+
   &-list {
     &__item {
       font-size: 16px;
@@ -109,9 +121,11 @@ export default {
       justify-content: flex-start;
       align-items: center;
       margin-top: 9.88px;
+
       &-label {
         width: 160px;
       }
+
       &-name {
         text-align: left;
         margin-left: 9.6px;
