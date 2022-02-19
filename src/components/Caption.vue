@@ -10,28 +10,24 @@
 <script>
 export default {
   props: {
-    work: Object
+    work: Object,
   },
   mounted() {
-
     const captionPosJson = getCaptionPosJson(this.work.author);
 
-    const targetElement = document.getElementById("caption-" + this.work.author);
+    const targetElement = document.getElementById(
+      "caption-" + this.work.author
+    );
 
     if (captionPosJson) {
-
       targetElement.style.top = `${captionPosJson.top}px`;
       targetElement.style.left = `${captionPosJson.left}px`;
-
     } else {
-
       targetElement.style.top = "578px";
       targetElement.style.left = "379px";
-
     }
-
-  }
-}
+  } 
+};
 
 function getCaptionPosJson(id) {
   try {
@@ -44,14 +40,16 @@ function getCaptionPosJson(id) {
 
 <style scoped lang="scss">
 .caption {
+  opacity: 0.7;
   position: fixed;
-  width: 20%;
-  height: 20%;
+  width: 12%;
+  height: 14%;
   background-color: white;
   z-index: 1000;
-  padding: 1% 2%;
+  padding: 0.5% 1.5%;
   color: black;
-  font-size: 20px;
-  line-height: 35px;
+  font-size: 12px;
+  line-height: 27px;
+  transition: opacity 0.5s;
 }
 </style>
