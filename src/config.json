@@ -11,6 +11,7 @@
         "number": "A-1",
         "title": "8mm evolution",
         "author": "nowatari",
+        "real-name": "野渡蒼美",
         "url": "./viewer?width=560&height=315&id=Ie8skhh9cxw&title=8mm%20evolution&creator=野渡蒼美&number=A-1",
         "form": "映像",
         "year": "2021"
@@ -24,6 +25,7 @@
         "number": "B-1",
         "title": "Mauer",
         "author": "yamaura",
+        "real-name": "山浦一輝",
         "url": "https://mauer.kzkymur.com/",
         "form": "Web",
         "year": "2021-2022"
@@ -37,6 +39,7 @@
         "number": "C-1",
         "title": "a second",
         "author": "konisi",
+        "real-name": "小西智樹",
         "url": "https://a-second.herokuapp.com/",
         "form": "Web",
         "year": "2021"
@@ -45,6 +48,7 @@
         "number": "C-2",
         "title": "時短",
         "author": "nisimura",
+        "real-name": "西村純",
         "url": "https://hotoke-to-watashi.netlify.app/",
         "form": "Web",
         "year": "2022"
@@ -58,6 +62,7 @@
         "number": "D-1",
         "title": "Burial in a cistern",
         "author": "inose",
+        "real-name": "猪瀬暖基",
         "url": "./viewer?width=560&height=315&id=T9cqxe_TxQc&title=Burial%20in%20a%20cistern&creator=猪瀬暖基&number=D-1",
         "form": "映像",
         "year": "2021-2022"
@@ -71,6 +76,7 @@
         "number": "E-1",
         "title": "なんだって生きようとする",
         "author": "tosa",
+        "real-name": "土佐凜斗",
         "url": "./viewer?width=560&height=315&id=RdPWVk5R5lY&title=なんだって生きようとする&creator=土佐凜斗&number=E-2",
         "form": "映像",
         "year": "2021"
@@ -84,6 +90,7 @@
         "number": "F-1",
         "title": "ホタル.js",
         "author": "kitaoka",
+        "real-name": "北岡直紀",
         "url": "https://kitaokan.github.io/",
         "form": "Web",
         "year": "2021"
@@ -92,6 +99,7 @@
         "number": "F-2",
         "title":"(humane)",
         "author": "yokoyama",
+        "real-name": "横山拓己",
         "url": "./viewer?width=560&height=315&id=-qzVykN8Qj4&title=%28humane%29&creator=%E6%A8%AA%E5%B1%B1%E6%8B%93%E5%B7%B3&number=F-2",
         "form": "映像",
         "year": "2021-2022"
@@ -105,6 +113,7 @@
         "number": "G-1",
         "title": "Dreamedium",
         "author": "suzuki",
+        "real-name": "鈴木紫琉",
         "url": "./viewer?width=560&height=315&id=YZdjpaFXWbw&title=Dreamedium&creator=鈴木紫琉&number=G-1",
         "_comment": "YouTube埋め込み",
         "form": "映像",
