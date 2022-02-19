@@ -1,7 +1,7 @@
 {
-    "transformString": "translate(-108px, -147px) rotate3d(1, 0, 0,0deg) rotate3d(0, 1, 0,0deg) rotate3d(0, 0, 1,0deg) scale3d(3.394, 4.518, 1 ) ",
-    "translateX": "-108",
-    "translateY": "-147",
+    "transformString": "translate(-112px, -190px) rotate3d(1, 0, 0,0deg) rotate3d(0, 1, 0,0deg) rotate3d(0, 0, 1,0deg) scale3d(3.394, 4.518, 1 ) ",
+    "translateX": "-112",
+    "translateY": "-190",
     "rotateX": "0",
     "rotateY": "0",
     "rotateZ": 0,
