@@ -55,6 +55,7 @@ export default {
   methods: {
     increment () {
       if (!this.switchable) return;
+      this.$store.commit('setCaptionVisible', false);
       let index = this.index;
       index++;
       index %= this.config.length;
@@ -63,6 +64,7 @@ export default {
     },
     decrement () {
       if (!this.switchable) return;
+      this.$store.commit('setCaptionVisible', false);
       let index = this.index;
       if (this.index === 0) index = this.config.length;
       index--;
@@ -78,8 +80,7 @@ export default {
       if (isVisibleClass)
         return `transition: all ${transitionTime}s ${transitionTime}s`;
       else
-        return `transition: all ${transitionTime}s`;
-    }
+        return `transition: all ${transitionTime}s`; }
   },
   mounted() {
     if (process.env.NODE_ENV !== "development") return;
