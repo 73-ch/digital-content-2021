@@ -7,7 +7,7 @@
         :work="work"
       />
     </div>
-    <div v-for="work in config[index].workList" :key="work.author">
+    <div v-for="work in workListForCaption" :key="work.author">
       <Caption :work="work" v-if="work.title" />
     </div>
     <Carousel v-model:propIndex="index" :config="config" />
@@ -38,6 +38,18 @@ import config from "../config.json";
 
 export default {
   components: { Carousel, Calibration, CaptionPositionSetter, Window, Caption },
+  computed: {
+    workListForCaption() {
+      return this.config.filter((_,i) => Math.abs(this.index-i) < 2)
+        .reduce((a,c,i)=>{
+          c.workList.forEach((work)=>a.push({
+            ...work,
+            index: i,
+          }));
+          return a;
+        },[]);
+    }
+  },
   data() {
     return {
       config,
