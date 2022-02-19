@@ -8,70 +8,12 @@
     "youtubeId": "VPNbYa39_g4",
     "workList": [
       {
+        "number": "A-1",
         "title": "8mm evolution",
         "author": "nowatari",
-        "url": "./viewer?width=560&height=315&id=Ie8skhh9cxw&title=8mm%20evolution&creator=野渡蒼美&number=A-1"
-      }
-    ]
-  },
-  {
-    "youtubeId": "WTwsD3R1gEM",
-    "workList": [
-      {
-        "title": "Soluble Self",
-        "author": "inose",
-        "url": "./viewer?width=560&height=315&id=T9cqxe_TxQc&title=Soluble%20Self&creator=猪瀬暖基&number=G-1"
-      }
-    ]
-  },
-  {
-    "youtubeId": "mxhWPrxlNlo",
-    "workList": [
-      {
-        "title": "なんだって生きようとする",
-        "author": "tosa",
-        "url": "./viewer?width=560&height=315&id=RdPWVk5R5lY&title=なんだって生きようとする&creator=土佐凜斗&number=B-2"
-      }
-    ]
-  },
-  {
-    "youtubeId": "p0dtTPUz5Ic",
-    "workList": [
-    ]
-  },
-  {
-    "youtubeId": "kRhGRMKT2-k",
-    "workList": [
-      {
-        "title": "scrolling",
-        "author": "namikawa",
-        "url": "https://scrolling.73ch.work/"
-      }
-    ]
-  },
-  {
-    "youtubeId": "bzPAx1W-gb4",
-    "workList": [
-      {
-        "title": "寄せ文字",
-        "author": "hirato",
-        "url": "https://script.google.com/macros/s/AKfycbxSY7BAeUve2cQ4tpIwt3GY_mHmy_YcKeUWN9uuuV9I7PCpJoyQxwq2rkLND8ejneh7/exec"
-      }
-    ]
-  },
-  {
-    "youtubeId": "b3ZeZ_to0jk",
-    "workList": [
-      {
-        "title": "Dreamedium",
-        "author": "suzuki",
-        "url": "./viewer?width=560&height=315&id=YZdjpaFXWbw&title=Dreamedium&creator=鈴木紫琉&number=J-1",
-        "_comment": "YouTube埋め込み"
-      },
-      {
-        "title": "満たされた色, 光.",
-        "author": "nagakura",
-        "url": "./viewer?width=560&height=315&id=wz1MtDWxr14&title=%E6%BA%80%E3%81%9F%E3%81%95%E3%82%8C%E3%81%9F%E8%89%B2%EF%BC%8C%E5%85%89%EF%BC%8E&creator=永倉昂暉&number=J-2"
+        "url": "./viewer?width=560&height=315&id=Ie8skhh9cxw&title=8mm%20evolution&creator=野渡蒼美&number=A-1",
+        "form": "映像",
+        "year": "2021"
       }
     ]
   },
@@ -79,24 +21,12 @@
     "youtubeId": "EwE2VM-vE88",
     "workList": [
       {
+        "number": "B-1",
         "title": "Mauer",
         "author": "yamaura",
-        "url": "https://mauer.kzkymur.com/"
-      }
-    ]
-  },
-  {
-    "youtubeId": "3n8MUBW1mV4",
-    "workList": [
-      {
-        "title": "個性.ttf",
-        "author": "tunoda",
-        "url": "https://2ndr9.github.io/a/"
-      },
-      {
-        "title": "アート？展",
-        "author": "okamura",
-        "url": "https://miro.com/app/board/uXjVOaDyfXs=/"
+        "url": "https://mauer.kzkymur.com/",
+        "form": "Web",
+        "year": "2021-2022"
       }
     ]
   },
@@ -104,14 +34,46 @@
     "youtubeId": "MN5U2ZFYkQY",
     "workList": [
       {
+        "number": "C-1",
         "title": "a second",
         "author": "konisi",
-        "url": "https://a-second.herokuapp.com/"
+        "url": "https://a-second.herokuapp.com/",
+        "form": "Web",
+        "year": "2021"
       },
       {
-        "title": "仏と私、時々通知",
+        "number": "C-2",
+        "title": "時短",
         "author": "nisimura",
-        "url": "https://hotoke-to-watashi.netlify.app/"
+        "url": "https://hotoke-to-watashi.netlify.app/",
+        "form": "Web",
+        "year": "2022"
+      }
+    ]
+  },
+  {
+    "youtubeId": "WTwsD3R1gEM",
+    "workList": [
+      {
+        "number": "D-1",
+        "title": "Burial in a cistern",
+        "author": "inose",
+        "url": "./viewer?width=560&height=315&id=T9cqxe_TxQc&title=Burial%20in%20a%20cistern&creator=猪瀬暖基&number=D-1",
+        "form": "映像",
+        "year": "2021-2022"
+      }
+    ]
+  },
+  {
+    "youtubeId": "mxhWPrxlNlo",
+    "workList": [
+      {
+        "number": "E-1",
+        "title": "なんだって生きようとする",
+        "author": "tosa",
+        "url": "./viewer?width=560&height=315&id=RdPWVk5R5lY&title=なんだって生きようとする&creator=土佐凜斗&number=E-2",
+        "form": "映像",
+        "year": "2021"
       }
     ]
   },
@@ -119,15 +81,95 @@
     "youtubeId": "_YGEE77iQtA",
     "workList": [
       {
+        "number": "F-1",
         "title": "ホタル.js",
         "author": "kitaoka",
-        "url": "https://kitaokan.github.io/"
+        "url": "https://kitaokan.github.io/",
+        "form": "Web",
+        "year": "2021"
       },
       {
+        "number": "F-2",
         "title":"(humane)",
         "author": "yokoyama",
-        "url": "./viewer?width=560&height=315&id=-qzVykN8Qj4&title=%28humane%29&creator=%E6%A8%AA%E5%B1%B1%E6%8B%93%E5%B7%B3&number=K-2"
+        "url": "./viewer?width=560&height=315&id=-qzVykN8Qj4&title=%28humane%29&creator=%E6%A8%AA%E5%B1%B1%E6%8B%93%E5%B7%B3&number=F-2",
+        "form": "映像",
+        "year": "2021-2022"
       }
+    ]
+  },
+  {
+    "youtubeId": "b3ZeZ_to0jk",
+    "workList": [
+      {
+        "number": "G-1",
+        "title": "Dreamedium",
+        "author": "suzuki",
+        "url": "./viewer?width=560&height=315&id=YZdjpaFXWbw&title=Dreamedium&creator=鈴木紫琉&number=G-1",
+        "_comment": "YouTube埋め込み",
+        "form": "映像",
+        "year": "2021"
+      },
+      {
+        "number": "G-2",
+        "title": "満たされた色, 光.",
+        "author": "nagakura",
+        "url": "./viewer?width=560&height=315&id=8ppWKrhcRaU&title=満たされた色,%20光.&creator=永倉昂暉&number=G-2",
+        "form": "映像",
+        "year": "2021-2022"
+      }
+    ]
+  },
+  {
+    "youtubeId": "bzPAx1W-gb4",
+    "workList": [
+      {
+        "number": "H-1",
+        "title": "寄せ文字",
+        "author": "hirato",
+        "url": "https://script.google.com/macros/s/AKfycbxSY7BAeUve2cQ4tpIwt3GY_mHmy_YcKeUWN9uuuV9I7PCpJoyQxwq2rkLND8ejneh7/exec",
+        "form": "Web",
+        "year": "2021"
+      }
+    ]
+  },
+  {
+    "youtubeId": "3n8MUBW1mV4",
+    "workList": [
+      {
+        "number": "I-1",
+        "title": "個性.ttf",
+        "author": "tunoda",
+        "url": "https://2ndr9.github.io/kosei.ttf/",
+        "form": "Web",
+        "year": "2021-2022"
+      },
+      {
+        "number": "I-2",
+        "title": "アート？展",
+        "author": "okamura",
+        "url": "https://whats-art.herokuapp.com/",
+        "form": "Web",
+        "year": "2021-2022"
+      }
+    ]
+  },
+  {
+    "youtubeId": "kRhGRMKT2-k",
+    "workList": [
+      {
+        "number": "J-1",
+        "title": "scrolling",
+        "author": "namikawa",
+        "url": "https://scrolling.73ch.work/",
+        "form": "Web, ターンテーブル, PC",
+        "year": "2021"
+      }
+    ]
+  },
+  {
+    "youtubeId": "p0dtTPUz5Ic",
+    "workList": [
     ]
   },
   {
