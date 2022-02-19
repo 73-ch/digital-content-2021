@@ -1,5 +1,7 @@
 <template>
-  <div class="caption" :id="'caption-' + work.author">
+  <div
+    :class="`caption ${visible ? 'visible' : ''}`"
+    :id="'caption-' + work.author">
     <p class="caption-number">{{ work.number }}</p>
     <p class="caption-title">{{ work.title }}</p>
     <p class="caption-author">{{ work["real-name"] }}</p>
@@ -9,10 +11,18 @@
 
 <script>
 export default {
+  computed: {
+    visible() {
+      return this.$store.state.captionVisible;
+    }
+  },
   props: {
     work: Object,
   },
   mounted() {
+    setTimeout(()=>{
+      this.$store.commit('setCaptionVisible', true);
+    }, 50);
     const captionPosJson = getCaptionPosJson(this.work.author);
 
     const targetElement = document.getElementById(
@@ -44,7 +54,8 @@ function getCaptionPosJson(id) {
 
 <style scoped lang="scss">
 .caption {
-  opacity: 0.7;
+  transition: all 1s;
+  opacity: 0;
   position: fixed;
   width: 9%;
   height: 11%;
@@ -54,5 +65,9 @@ function getCaptionPosJson(id) {
   color: black;
   font-size: 10px;
   line-height: 20px;
+  &.visible {
+    z-index: 10;
+    opacity: 0.7;
+  }
 }
 </style>
