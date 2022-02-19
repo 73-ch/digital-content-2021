@@ -123,6 +123,7 @@
         "number": "G-2",
         "title": "満たされた色, 光.",
         "author": "nagakura",
+        "real-name": "永倉昂輝",
         "url": "./viewer?width=560&height=315&id=8ppWKrhcRaU&title=満たされた色,%20光.&creator=永倉昂暉&number=G-2",
         "form": "映像",
         "year": "2021-2022"
@@ -136,6 +137,7 @@
         "number": "H-1",
         "title": "寄せ文字",
         "author": "hirato",
+        "real-name": "平戸航之介",
         "url": "https://script.google.com/macros/s/AKfycbxSY7BAeUve2cQ4tpIwt3GY_mHmy_YcKeUWN9uuuV9I7PCpJoyQxwq2rkLND8ejneh7/exec",
         "form": "Web",
         "year": "2021"
@@ -149,6 +151,7 @@
         "number": "I-1",
         "title": "個性.ttf",
         "author": "tunoda",
+        "real-name": "角田陸",
         "url": "https://2ndr9.github.io/kosei.ttf/",
         "form": "Web",
         "year": "2021-2022"
@@ -157,6 +160,7 @@
         "number": "I-2",
         "title": "アート？展",
         "author": "okamura",
+        "real-name": "岡村美紀",
         "url": "https://whats-art.herokuapp.com/",
         "form": "Web",
         "year": "2021-2022"
@@ -170,6 +174,7 @@
         "number": "J-1",
         "title": "scrolling",
         "author": "namikawa",
+        "real-name": "浪川洪作",
         "url": "https://scrolling.73ch.work/",
         "form": "Web, ターンテーブル, PC",
         "year": "2021"
