@@ -26,6 +26,10 @@ export default {
       targetElement.style.top = "578px";
       targetElement.style.left = "379px";
     }
+
+    if (this.work.number === "E-1" || this.work.number === "J-1") {
+      document.getElementById("caption-" + this.work.author).style.height = "13%";
+    }
   },
 };
 
@@ -42,13 +46,13 @@ function getCaptionPosJson(id) {
 .caption {
   opacity: 0.7;
   position: fixed;
-  width: 12%;
-  height: 14%;
+  width: 9%;
+  height: 11%;
   background-color: white;
   z-index: 1000;
-  padding: 0.5% 1.5%;
+  padding: 0.5% 1.2%;
   color: black;
-  font-size: 12px;
-  line-height: 27px;
+  font-size: 10px;
+  line-height: 20px;
 }
 </style>
