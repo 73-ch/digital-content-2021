@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`caption ${visible ? 'visible' : ''}`"
+    :class="`caption ${visible ? 'visible' : ''}  ${isFadeIn ? 'in' : 'out'}`"
     :id="'caption-' + work.author">
     <p class="caption-number">{{ work.number }}</p>
     <p class="caption-title">{{ work.title }}</p>
@@ -12,17 +12,18 @@
 <script>
 export default {
   computed: {
+    isFadeIn() {
+      console.log(this.work.index);
+      return this.work.index == 1;
+    },
     visible() {
-      return this.$store.state.captionVisible;
+      return this.$store.state.captionVisible && this.isFadeIn;
     }
   },
   props: {
     work: Object,
   },
   mounted() {
-    setTimeout(()=>{
-      this.$store.commit('setCaptionVisible', true);
-    }, 50);
     const captionPosJson = getCaptionPosJson(this.work.author);
 
     const targetElement = document.getElementById(
@@ -54,7 +55,12 @@ function getCaptionPosJson(id) {
 
 <style scoped lang="scss">
 .caption {
-  transition: all 1s 1s;
+  &.in {
+    transition: all 1s 1s;
+  }
+  &.out {
+    transition: all 1s;
+  }
   opacity: 0;
   position: fixed;
   width: 9%;

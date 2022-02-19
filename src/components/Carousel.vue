@@ -56,6 +56,7 @@ export default {
     increment () {
       if (!this.switchable) return;
       this.$store.commit('setCaptionVisible', false);
+      setTimeout(()=>{ this.$store.commit('setCaptionVisible', true); }, 50);
       let index = this.index;
       index++;
       index %= this.config.length;
@@ -65,6 +66,7 @@ export default {
     decrement () {
       if (!this.switchable) return;
       this.$store.commit('setCaptionVisible', false);
+      setTimeout(()=>{ this.$store.commit('setCaptionVisible', true); }, 50);
       let index = this.index;
       if (this.index === 0) index = this.config.length;
       index--;
