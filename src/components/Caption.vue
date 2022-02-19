@@ -54,7 +54,7 @@ function getCaptionPosJson(id) {
 
 <style scoped lang="scss">
 .caption {
-  transition: all 1s;
+  transition: all 1s 1s;
   opacity: 0;
   position: fixed;
   width: 9%;
