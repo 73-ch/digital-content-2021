@@ -26,7 +26,7 @@ export default {
       targetElement.style.top = "578px";
       targetElement.style.left = "379px";
     }
-  } 
+  },
 };
 
 function getCaptionPosJson(id) {
@@ -50,6 +50,5 @@ function getCaptionPosJson(id) {
   color: black;
   font-size: 12px;
   line-height: 27px;
-  transition: opacity 0.5s;
 }
 </style>
