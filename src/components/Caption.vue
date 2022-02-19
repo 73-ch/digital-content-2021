@@ -2,7 +2,8 @@
   <div class="caption" :id="'caption-' + work.author">
     <p class="caption-number">{{ work.number }}</p>
     <p class="caption-title">{{ work.title }}</p>
-    <p class="caption-author">{{ work.author }} 2021</p>
+    <p class="caption-author">{{ work["real-name"] }}</p>
+    <p class="caption-formnyear">{{ work.form }} / {{ work.year }}</p>
   </div>
 </template>
 
@@ -45,11 +46,12 @@ function getCaptionPosJson(id) {
 .caption {
   position: fixed;
   width: 20%;
-  height: 18%;
+  height: 20%;
   background-color: white;
   z-index: 1000;
-  padding: 1% 1%;
+  padding: 1% 2%;
   color: black;
   font-size: 20px;
+  line-height: 35px;
 }
 </style>
