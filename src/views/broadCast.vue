@@ -8,7 +8,7 @@
       />
     </div>
     <div v-for="work in workListForCaption" :key="work.author">
-      <Caption :work="work" v-if="work.title" />
+      <Caption :work="work" v-if="work.title !== undefined" />
     </div>
     <Carousel v-model:propIndex="index" :config="config" />
     <Calibration v-if="isDebugMode">
