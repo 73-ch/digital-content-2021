@@ -350,8 +350,8 @@ export default {
 
 <style scoped lang="scss">
 #calibration {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 10%;
   position: fixed;
   left: 0;
   top: 0;
