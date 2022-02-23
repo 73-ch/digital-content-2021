@@ -9,11 +9,7 @@
     </div>
   </div>
   <calibration v-if="debugMode"/>
-  <modal
-      v-if="isModalOpen"
-      :isButtonClickable="isWindowLargeEnough"
-      @closeModal="closeModal"
-  />
+  <modal-finished />
 </template>
 
 <script>
@@ -21,13 +17,15 @@ import {ref, computed} from 'vue'
 import Dummy from "@/views/Dummy"
 import transformJSON from '@/assets/calibration-data/dummy.json'
 import Calibration from '@/components/Calibration.vue'
-import Modal from '@/components/Modal.vue'
+// import Modal from '@/components/Modal.vue'
+import ModalFinished from '@/components/ModalFinished.vue'
 
 export default {
   components: {
     Dummy,
     Calibration,
-    Modal
+    // Modal,
+    ModalFinished
   },
   setup() {
     const isModalOpen = ref(false)
