@@ -1,7 +1,6 @@
 <template>
   <div id="home">
-<!--    <img id="broadcast" src="@/assets/images/toppage-background.png" alt="top-page background">-->
-        <iframe id="broadcast" src="https://www.youtube.com/embed/YI7pzL9ipes?controls=0&autoplay=1&mute=1&rel=0&vq=highres" title="YouTube video player" frameborder="0"></iframe>
+    <iframe id="broadcast" :src="youtubeLink" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <div class="youtube-hide"></div>
     <img class="hint-image" src="@/assets/images/hint.png" alt="hint image">
     <div class="virtual-screen">
@@ -30,6 +29,7 @@ export default {
   setup() {
     const isModalOpen = ref(false)
     const isWindowLargeEnough = ref(true)
+    const youtubeLink = ref("")
     const bgImage = computed(() => require("@/assets/images/background.png"))
 
     const closeModal = () => {
@@ -52,7 +52,22 @@ export default {
     // 一番最初にモーダルを出す
     isModalOpen.value = true
 
-    return { isModalOpen, isWindowLargeEnough, bgImage, closeModal }
+    const date = new Date()
+    if (date.getHours() < 12) {
+      // 午前中
+      const hourDiff = date.getHours() * 3600
+      const minDiff = date.getMinutes() * 60
+      const secDiff = date.getSeconds()
+      youtubeLink.value = `https://www.youtube.com/embed/ORy1tLNQWOQ?start=${hourDiff + minDiff + secDiff}`
+    } else {
+      // 午後
+      const hourDiff = (date.getHours() - 12) * 3600
+      const minDiff = date.getMinutes() * 60
+      const secDiff = date.getSeconds()
+      youtubeLink.value = `https://www.youtube.com/embed/cSQt38URxdU?start=${hourDiff + minDiff + secDiff}`
+    }
+
+    return { isModalOpen, isWindowLargeEnough, bgImage, youtubeLink, closeModal }
   },
   data() {
     return {
