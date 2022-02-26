@@ -1,14 +1,18 @@
 <template>
   <div id="home">
-    <iframe id="broadcast" :src="youtubeLink" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <h2>{{ youtubeLink }}</h2>
+    <iframe id="broadcast" :src="youtubeLink" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
     <div class="youtube-hide"></div>
     <img class="hint-image" src="@/assets/images/hint.png" alt="hint image">
+
     <div class="virtual-screen">
-      <dummy id="dummy" />
+      <dummy id="dummy"/>
     </div>
   </div>
   <calibration v-if="debugMode"/>
-  <modal-finished />
+  <modal v-if="isModalOpen" :isButtonClickable="isWindowLargeEnough" @closeModal="closeModal"/>
 </template>
 
 <script>
@@ -16,15 +20,14 @@ import {ref, computed} from 'vue'
 import Dummy from "@/views/Dummy"
 import transformJSON from '@/assets/calibration-data/dummy.json'
 import Calibration from '@/components/Calibration.vue'
-// import Modal from '@/components/Modal.vue'
-import ModalFinished from '@/components/ModalFinished.vue'
+import Modal from '@/components/Modal.vue'
+// import ModalFinished from '@/components/ModalFinished.vue'
 
 export default {
   components: {
     Dummy,
     Calibration,
-    // Modal,
-    ModalFinished
+    Modal, // ModalFinished
   },
   setup() {
     const isModalOpen = ref(false)
@@ -53,19 +56,10 @@ export default {
     isModalOpen.value = true
 
     const date = new Date()
-    if (date.getHours() < 12) {
-      // 午前中
-      const hourDiff = date.getHours() * 3600
-      const minDiff = date.getMinutes() * 60
-      const secDiff = date.getSeconds()
-      youtubeLink.value = `https://www.youtube.com/embed/ORy1tLNQWOQ?start=${hourDiff + minDiff + secDiff}`
-    } else {
-      // 午後
-      const hourDiff = (date.getHours() - 12) * 3600
-      const minDiff = date.getMinutes() * 60
-      const secDiff = date.getSeconds()
-      youtubeLink.value = `https://www.youtube.com/embed/cSQt38URxdU?start=${hourDiff + minDiff + secDiff}`
-    }
+    const isAfterNoon = date.getHours() > 12;
+    const startTime = (date.getHours() % 12) * 3600 + date.getMinutes() * 60 + date.getSeconds();
+
+    youtubeLink.value = `https://www.youtube.com/embed/?list=PLrtCadD1yHhOxPwJuJ8tmehV4GnCpFICt&index=${+isAfterNoon + 1}&loop=1&autoplay=1&mute=1&rel=0&vq=highres&start=${startTime}`
 
     return { isModalOpen, isWindowLargeEnough, bgImage, youtubeLink, closeModal }
   },
