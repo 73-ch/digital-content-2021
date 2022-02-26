@@ -57,9 +57,10 @@ export default {
 
     const date = new Date()
     const isAfterNoon = date.getHours() > 12;
+
     const startTime = (date.getHours() % 12) * 3600 + date.getMinutes() * 60 + date.getSeconds();
 
-    youtubeLink.value = `https://www.youtube.com/embed/?list=PLrtCadD1yHhOxPwJuJ8tmehV4GnCpFICt&index=${+isAfterNoon + 1}&loop=1&autoplay=1&mute=1&rel=0&vq=highres&start=${startTime}`
+    youtubeLink.value = `https://www.youtube.com/embed/?list=PLrtCadD1yHhOTUGsS91Ujl0rMUX8JOS1V&index=${+isAfterNoon + 1}&loop=1&autoplay=1&mute=1&rel=0&vq=highres&start=${startTime}`
 
     return { isModalOpen, isWindowLargeEnough, bgImage, youtubeLink, closeModal }
   },
