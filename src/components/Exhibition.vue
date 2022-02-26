@@ -1,13 +1,10 @@
 <template>
   <div>
-    <iframe
-      class="gallary"
-      :src="`https://www.youtube.com/embed/${isLoop ?id.replace(/&.*/g, '') :  id}?controls=0&autoplay=1&mute=1${isLoop ? '&loop=1&playlist='+id : ''}`"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    />
+    <iframe class="gallary"
+        :src="url"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen/>
   </div>
 </template>
 
@@ -16,9 +13,30 @@ export default {
   props: {
     id: String,
   },
+  data() {
+    return {
+      index: 0,
+      startTime: 0
+    }
+  },
+  created() {
+    const date = new Date()
+    const isAfterNoon = date.getHours() > 12;
+
+    this.index = +isAfterNoon + 1;
+    this.startTime = (date.getHours() % 12) * 3600 + date.getMinutes() * 60 + date.getSeconds();
+  },
   computed: {
-    isLoop() {
-      return this.id.indexOf('loop') > -1;
+    isHelp() {
+      return this.id.indexOf('help') > -1;
+    },
+    url() {
+      if (this.isHelp) {
+        return `https://www.youtube.com/embed/?list=${this.id.replace(/&.*/g, '')}&loop=1&autoplay=1&mute=1&rel=0&vq=highres&controls=0}`
+      } else {
+        return `https://www.youtube.com/embed/?list=${this.id}&index=${this.index}&loop=1&autoplay=1&mute=1&rel=0&vq=highres&controls=0&start=${this.startTime}`
+      }
+
     }
   }
 };
