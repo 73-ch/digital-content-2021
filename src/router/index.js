@@ -15,6 +15,11 @@ const routes = [
     component: Home
   },
   {
+    path: '/2021',
+    name: 'Home',
+    component: Home
+  },
+  {
     path: '/broadCast',
     name: 'broadCast',
     component: broadCast
