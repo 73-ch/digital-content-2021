@@ -11,6 +11,11 @@ import AccessDeny from '@/views/AccessDeny';
 const routes = [
   {
     path: '/',
+    name: 'route',
+    component: Home
+  },
+  {
+    path: '/2021',
     name: 'Home',
     component: Home
   },
@@ -52,7 +57,7 @@ const routes = [
   {
     // それ以外はホーム画面に遷移
     path: '/:notFound(.*)',
-    redirect: '/'
+    redirect: '/2021'
   }
 ]
 
